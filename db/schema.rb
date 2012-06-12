@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605194611) do
+ActiveRecord::Schema.define(:version => 20120612183839) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
-    t.date     "start_date"
-    t.date     "end_date"
+    t.date     "startdate"
+    t.date     "enddate"
     t.string   "status"
     t.string   "summary"
     t.datetime "created_at", :null => false
@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(:version => 20120605194611) do
   end
 
   create_table "narratives", :force => true do |t|
-    t.integer  "event_id"
-    t.integer  "user_id"
     t.string   "name"
     t.string   "location"
     t.string   "content"
@@ -35,10 +33,11 @@ ActiveRecord::Schema.define(:version => 20120605194611) do
 
   create_table "users", :force => true do |t|
     t.string   "username"
-    t.string   "name"
+    t.string   "password"
     t.string   "email"
+    t.string   "name"
+    t.string   "account"
     t.integer  "dob"
-    t.string   "acctype"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

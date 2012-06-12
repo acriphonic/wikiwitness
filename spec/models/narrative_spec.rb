@@ -10,18 +10,8 @@
 #  updated_at :datetime        not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+require 'spec_helper'
 
-one:
-  event_id: 1
-  user_id: 1
-  name: MyString
-  location: MyString
-  content: MyString
-
-two:
-  event_id: 1
-  user_id: 1
-  name: MyString
-  location: MyString
-  content: MyString
+describe Narrative do
+  pending "add some examples to (or delete) #{__FILE__}"
+end

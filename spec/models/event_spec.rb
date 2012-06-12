@@ -12,10 +12,8 @@
 #  updated_at :datetime        not null
 #
 
-require 'test_helper'
+require 'spec_helper'
 
-class EventTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+describe Event do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
