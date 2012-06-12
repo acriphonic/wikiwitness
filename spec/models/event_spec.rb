@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  startdate  :date
+#  enddate    :date
+#  status     :string(255)
+#  summary    :string(255)
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#
+
 require 'spec_helper'
 
 describe Event do
