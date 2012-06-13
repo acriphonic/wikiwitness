@@ -1,4 +1,14 @@
 Wikiwitness::Application.routes.draw do
+  get "static_pages/mission"
+
+  get "static_pages/guidelines"
+
+  get "static_pages/faq"
+
+  get "static_pages/contact"
+
+  get "static_pages/getting_started"
+
   resources :narratives
 
   resources :events
