@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612202347) do
+ActiveRecord::Schema.define(:version => 20120613175454) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(:version => 20120612202347) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "events", ["name"], :name => "index_events_on_name", :unique => true
 
   create_table "narratives", :force => true do |t|
     t.string   "name"
@@ -38,8 +40,9 @@ ActiveRecord::Schema.define(:version => 20120612202347) do
     t.string   "name"
     t.string   "account"
     t.integer  "dob"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -23,37 +23,27 @@ describe Narrative do
 
 	subject { @narrative }
 
-	describe "field are populated" do
+	describe "fields should be populated" do
 		it { should respond_to(:name) }
-		it { should respond_to(:location) }
 		it { should respond_to(:content) }
 		it { should be_valid }
 	end
 
+	# tests for narrative post title
 	describe "when name is not present" do
 		before { @.name = " " }
 		it { should_not be_valid }
     end
 
+    describe "with a name that is too long" do
+		before { @.name = "a" * 101 }
+		it { should_not be_valid }
+    end
+    
+    # tests for narrative content
     describe "when content is not present" do
 		before { @.content = " " }
 		it { should_not be_valid }
-    end
-
-    describe "when location is not present" do
-		before { @.location = " " }
-		it { should_not be_valid }
-    end
-
-    describe "when fields are too short" do
-		describe "with a name that is too long" do
-			before { @.name = "a" * 101 }
-			it { should_not be_valid }
-    	end
-		describe "with a location that is too long" do
-			before { @.name = "a" * 51 }
-			it { should_not be_valid }
-    	end
     end
 
     describe "with a content that is too short" do

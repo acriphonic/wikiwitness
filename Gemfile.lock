@@ -28,12 +28,11 @@ GEM
     activesupport (3.2.3)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-<<<<<<< HEAD
-=======
     addressable (2.2.8)
->>>>>>> 80bd960bfe8e1bba3f49633619692ce321b97640
     annotate (2.4.1.beta1)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
+    bootstrap-sass (2.0.0)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -112,10 +111,7 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.10.0)
-<<<<<<< HEAD
-=======
     rubyzip (0.9.8)
->>>>>>> 80bd960bfe8e1bba3f49633619692ce321b97640
     sass (3.1.19)
     sass-rails (3.2.4)
       railties (~> 3.2.0)
@@ -149,10 +145,9 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (~> 2.4.1.beta)
-<<<<<<< HEAD
-=======
+  bcrypt-ruby (= 3.0.1)
+  bootstrap-sass (= 2.0.0)
   capybara (= 1.1.2)
->>>>>>> 80bd960bfe8e1bba3f49633619692ce321b97640
   coffee-rails (= 3.2.2)
   jquery-rails (= 2.0.0)
   pg (= 0.12.2)

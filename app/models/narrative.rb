@@ -12,4 +12,7 @@
 
 class Narrative < ActiveRecord::Base
   attr_accessible :content, :location, :name
+  
+  validates :content, presence: true, length: { minimum: 140 }
+  validates :name, presence: true, length: { maximum: 100 }
 end
