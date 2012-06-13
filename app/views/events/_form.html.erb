@@ -12,23 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "event name" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :start_date %><br />
-    <%= f.date_select :start_date %>
+    <%= f.label "start date" %><br />
+    <%= f.date_select :startdate %>
   </div>
   <div class="field">
-    <%= f.label :end_date %><br />
-    <%= f.date_select :end_date %>
+    <%= f.label "end date (optional)" %><br />
+    <%= f.date_select :enddate %>
   </div>
   <div class="field">
     <%= f.label :status %><br />
     <%= f.text_field :status %>
   </div>
   <div class="field">
-    <%= f.label :summary %><br />
+    <%= f.label "summary (optional)" %><br />
     <%= f.text_field :summary %>
   </div>
   <div class="actions">
