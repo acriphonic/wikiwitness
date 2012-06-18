@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: narratives
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  location   :string(255)
+#  content    :string(255)
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  event_id: 1
+  user_id: 1
+  name: MyString
+  location: MyString
+  content: MyString
+
+two:
+  event_id: 1
+  user_id: 1
+  name: MyString
+  location: MyString
+  content: MyString
