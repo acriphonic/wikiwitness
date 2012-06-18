@@ -40,6 +40,6 @@ class User < ActiveRecord::Base
 	end
 
 	def init
-		self.account = "basic"
+		user.account = "basic"
 	end
 end
