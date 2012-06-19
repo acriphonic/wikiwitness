@@ -16,7 +16,6 @@
 class User < ActiveRecord::Base
 	attr_accessible :account, :dob, :email, :name, :password, :username, :password_confirmation,
 		:email_confirmation
-	after_initialize :init
 
 	VALID_USERNAME_REGEX = /^[a-zA-Z0-9_]*[a-zA-Z][a-zA-Z0-9_]*$/
 	validates :username, presence: true, length: { minimum: 6, maximum: 15 }, uniqueness:
@@ -37,9 +36,6 @@ class User < ActiveRecord::Base
 	before_save do |user| 
 		user.email = email.downcase
 		user.username = username.downcase
-	end
-
-	def init
-		self.account = "basic"
+		user.account = "basic"
 	end
 end
