@@ -18,7 +18,7 @@ describe Narrative do
 		@narrative = Narrative.new(name: "The Forgotten Samurai", location: "Karakura, Japan", 
 		content:"After a frenzied dance of crimson and steel to the wailing of fading souls 
 	  	the 9 year war was finally ended. But it was not with extraordinary strength nor with
-  		superior skill that General Yamamoto won the battle against his famed foe.....") }
+  		superior skill that General Yamamoto won the battle against his famed foe.....") 
 	end
 
 	subject { @narrative }
@@ -31,23 +31,23 @@ describe Narrative do
 
 	# tests for narrative post title
 	describe "when name is not present" do
-		before { @.name = " " }
+		before { @narrative.name = " " }
 		it { should_not be_valid }
     end
 
     describe "with a name that is too long" do
-		before { @.name = "a" * 101 }
+		before { @narrative.name = "a" * 101 }
 		it { should_not be_valid }
     end
     
     # tests for narrative content
     describe "when content is not present" do
-		before { @.content = " " }
+		before { @narrative.content = " " }
 		it { should_not be_valid }
     end
 
     describe "with a content that is too short" do
-		before { @.name = "a" * 139}
+		before { @narrative.name = "a" * 139}
 		it { should_not be_valid }
     end
 end
