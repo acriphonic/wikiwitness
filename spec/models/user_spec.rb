@@ -28,10 +28,8 @@ describe User do
 	describe "fields should be populated" do
 		it { should respond_to(:username) }
 		it { should respond_to(:password) }
-		it { should respond_to(:password_confirmation) }
 		it { should respond_to(:password_digest) }
 		it { should respond_to(:email) }
-		it { should respond_to(:email_confirmation) }
 		it { should respond_to(:dob) }
 		it { should respond_to(:authenticate) }
 		it { should be_valid }
@@ -138,7 +136,7 @@ describe User do
 
 	describe "with a password that's too short" do
     	before { @user.password = @user.password_confirmation = "a1a1a" }
-    	it { should be_invalid }
+    	it { should_not be_valid }
   	end
 
   	describe "return value of authenticate method" do

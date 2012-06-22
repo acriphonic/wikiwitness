@@ -1,0 +1,7 @@
+class RemovepasswordFromUsers < ActiveRecord::Migration
+  def up
+  end
+
+  def down
+  end
+end
