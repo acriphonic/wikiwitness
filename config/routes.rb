@@ -15,8 +15,8 @@ Wikiwitness::Application.routes.draw do
     resources :narratives
   end
   resources :users do
-    resources :narratives
+    resources :narratives, only: [:show, :edit, :destroy]
   end
-  resources :narratives
+  resources :narratives, only: [:show]
   resources :sessions, only: [:new, :create, :destroy]
 end
