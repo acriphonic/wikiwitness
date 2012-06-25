@@ -21,6 +21,7 @@ class Narrative < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 100 }
   validates :user_id, presence: true
   validates :event_id, presence: true
+  validates_uniqueness_of :user_id, :scope => :event_id
 
   default_scope order: 'narratives.created_at DESC'
 end
