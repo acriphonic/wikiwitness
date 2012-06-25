@@ -1,7 +1,17 @@
-<% provide(:title, 'Edit Narrative') %>
-<h1>Editing narrative</h1>
+<h1>Editing Narrative</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @narrative %> |
-<%= link_to 'Back', narratives_path %>
+<%= form_for([:event, @narrative]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <p><%= f.submit %></p>
+<% end %>

@@ -2,19 +2,23 @@
 #
 # Table name: users
 #
-#  id         :integer         not null, primary key
-#  username   :string(255)
-#  password   :string(255)
-#  email      :string(255)
-#  name       :string(255)
-#  account    :string(255)
-#  dob        :integer
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
+#  id              :integer         not null, primary key
+#  username        :string(255)
+#  email           :string(255)
+#  name            :string(255)
+#  account         :string(255)
+#  dob             :integer
+#  created_at      :datetime        not null
+#  updated_at      :datetime        not null
+#  password_digest :string(255)
+#  remember_token  :string(255)
 #
 
 class User < ActiveRecord::Base
 	attr_accessible :dob, :email, :name, :password, :username, :password_confirmation
+	
+	has_many :narratives
+
 	has_secure_password
 	VALID_USERNAME_REGEX = /^[a-zA-Z0-9_]*[a-zA-Z][a-zA-Z0-9_]*$/
 	validates :username, presence: true, length: { minimum: 6, maximum: 15 }, uniqueness:
@@ -32,14 +36,18 @@ class User < ActiveRecord::Base
 	before_save do |user| 
 		user.email = email.downcase
 		user.username = username.downcase
-		user.account = "basic"
 	end
 
+	before_save :assign_account_type
 	before_save :create_remember_token
 
 	private
 
-    def create_remember_token
-      self.remember_token = SecureRandom.urlsafe_base64
-    end
+		def assign_account_type
+			self.account = "basic"
+		end
+
+		def create_remember_token
+		  	self.remember_token = SecureRandom.urlsafe_base64
+		end
 end

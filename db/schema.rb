@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120621124403) do
+ActiveRecord::Schema.define(:version => 20120622154046) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -31,7 +31,12 @@ ActiveRecord::Schema.define(:version => 20120621124403) do
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+    t.integer  "event_id"
   end
+
+  add_index "narratives", ["event_id", "created_at"], :name => "index_narratives_on_event_id_and_created_at"
+  add_index "narratives", ["user_id", "created_at"], :name => "index_narratives_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "username"

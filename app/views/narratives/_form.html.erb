@@ -1,19 +1,17 @@
-
-<%= form_for(@narrative) do |f| %>
+<%= form_for([@event, @event.narratives.build]) do |f| %>
   <% if @narrative.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@narrative.errors.count, "error") %> prohibited this narrative from being saved:</h2>
-
       <ul>
       <% @narrative.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "Title" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
@@ -22,9 +20,9 @@
   </div>
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_field :content %>
+    <%= f.text_area :content %>
   </div>
-  <div class="actions">
+  <div class="contribute">
     <%= f.submit %>
   </div>
 <% end %>
