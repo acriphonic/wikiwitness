@@ -83,6 +83,6 @@ class UsersController < ApplicationController
     end
 
     def admin_user
-      redirect_to(root_path) unless (current_user.account = "admin")
+      redirect_to(root_path) unless (current_user.account == "admin")
     end
 end

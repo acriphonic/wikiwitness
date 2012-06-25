@@ -1,31 +1,25 @@
-<% provide(:title, 'Event') %>
+<% provide(:title, @event.name) %>
 <p id="notice"><%= notice %></p>
-
+<h1><%= @event.name %></h1>
+<div class = "info">
+<h1>Information</h1>
+</br>
 <p>
-  <b>Name:</b>
-  <%= @event.name %>
+  Start date: <%= @event.startdate %>
+  </br>End date: <%= @event.enddate %>
+  </br>Status: <%= @event.status %>
+  </br>Summary: <%= @event.summary %>
 </p>
+  <% if current_user.account == "admin" %>
+    <%= link_to "Edit", edit_event_path(@event) %>
+    <%= link_to "Delete", event, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+<h3></h3>
+</div>
 
-<p>
-  <b>Start date:</b>
-  <%= @event.start_date %>
-</p>
+<h2>Narratives</h2>
 
-<p>
-  <b>End date:</b>
-  <%= @event.end_date %>
-</p>
+<%= link_to "Create Narrative", new_event_narrative_path(@event) %>
 
-<p>
-  <b>Status:</b>
-  <%= @event.status %>
-</p>
-
-<p>
-  <b>Summary:</b>
-  <%= @event.summary %>
-</p>
-
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= render :partial => @event.narratives %>

@@ -1,13 +1,10 @@
 class EventsController < ApplicationController
+  before_filter :admin_user,     only: [:create, :edit, :update, :destroy]
+
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @events }
-    end
+    @events = Event.paginate(page: params[:page])
   end
 
   # GET /events/1
@@ -80,4 +77,10 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+  
+    def admin_user
+      redirect_to(root_path) unless (current_user.account == "admin")
+    end
 end

@@ -1,0 +1,16 @@
+<div class="narrative">
+<h1>Title: <%= narrative.name %></h1>
+</br>
+<p>
+  <i>Author: <%= narrative.user_id %>
+  </br>Location: <%= narrative.location %></i>
+  </br></br><%= narrative.content %>
+</p>
+<h3>
+  <% if current_user?(narrative.user) %>
+    <%= link_to 'Edit', edit_narrative_path(narrative) %> |
+    <%= link_to "Delete", narrative, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</h3>
+</div>

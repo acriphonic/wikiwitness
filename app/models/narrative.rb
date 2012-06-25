@@ -8,11 +8,19 @@
 #  content    :string(255)
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  user_id    :integer
+#  event_id   :integer
 #
 
 class Narrative < ActiveRecord::Base
   attr_accessible :content, :location, :name
+  belongs_to :event
+  belongs_to :user
   
   validates :content, presence: true, length: { minimum: 140 }
   validates :name, presence: true, length: { maximum: 100 }
+  validates :user_id, presence: true
+  validates :event_id, presence: true
+
+  default_scope order: 'narratives.created_at DESC'
 end
