@@ -1,5 +1,5 @@
 module AdminHelper
-	private
+	private	
 		def signed_in_user
 		  unless signed_in?
 		    store_location
@@ -14,5 +14,9 @@ module AdminHelper
 
 		def admin_user
 		  redirect_to(root_path) unless (current_user.account == "admin")
+		end
+
+		def admin_user?(user)
+			user.account = "admin"
 		end
 end

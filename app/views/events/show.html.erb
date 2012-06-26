@@ -10,7 +10,7 @@
   </br>Status: <%= @event.status %>
   </br>Summary: <%= @event.summary %>
 </p>
-<% if current_user.account == "admin" %>
+<% if admin_user?(current_user) %>
     <%= link_to "Edit", edit_event_path(@event) %>
     <%= link_to "Delete", event, method: :delete,
                                   data: { confirm: "You sure?" } %>

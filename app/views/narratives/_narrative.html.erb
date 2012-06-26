@@ -7,7 +7,7 @@
   </br></br><%= narrative.content %>
 </p>
 <h3>
-<% if current_user?(narrative.user) || current_user.account == "admin" %>
+<% if current_user?(narrative.user) || admin_account?(current_user) %>
 	<%= link_to 'Edit', edit_narrative_path(narrative) %> |
 	<%= link_to "Delete", narrative, method: :delete,
                               data: { confirm: "You sure?" } %>

@@ -1,7 +1,6 @@
 <% provide(:title, 'All Events') %>
 <h1>All Events</h1>
-
-<% if current_user.account == "admin" %>
+<% if admin_user?(current_user) %>
 	<h2><%= link_to 'New Event', new_event_path %></h2>
 <% end %>
 
