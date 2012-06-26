@@ -18,13 +18,13 @@ describe Event do
 
 	before do
 		@event = Event.new(name: "Battle of Bunker Hill", status: "concluded",
-			startdate: Date.new(1775, 6, 17), enddate: Date.new(1775, 6, 17), 
-			summary: "The Battle of Bunker Hill took place on June 17, 1775, mostly on 
-			and around Breed's Hill, during the Siege of Boston early in the American 
-			Revolutionary War. The battle is named after the adjacent Bunker Hill, which 
-			was peripherally involved in the battle and was the original objective of 
-			both colonial and British troops, and is occasionally referred to as the 
-			'Battle of Breed's Hill.'")
+		startdate: Date.new(1775, 6, 17), enddate: Date.new(1775, 6, 17), 
+		summary: "The Battle of Bunker Hill took place on June 17, 1775, mostly on 
+		and around Breed's Hill, during the Siege of Boston early in the American 
+		Revolutionary War. The battle is named after the adjacent Bunker Hill, which 
+		was peripherally involved in the battle and was the original objective of 
+		both colonial and British troops, and is occasionally referred to as the 
+		'Battle of Breed's Hill.'")
 	end
 
 	subject { @event }
