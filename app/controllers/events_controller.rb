@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  before_filter :admin_user,     only: [:create, :edit, :update, :destroy]
+  before_filter :signed_in_user, only: [:edit, :create, :new, :update, :destroy]
+  before_filter :admin_user,     only: [:edit, :create, :new, :update, :destroy]
 
   # GET /events
   # GET /events.json
@@ -77,10 +78,4 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  private
-  
-    def admin_user
-      redirect_to(root_path) unless (current_user.account == "admin")
-    end
 end

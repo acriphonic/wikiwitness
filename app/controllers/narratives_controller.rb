@@ -1,5 +1,8 @@
 class NarrativesController < ApplicationController
   before_filter :load_current_event, only: [:new, :create]
+  before_filter :signed_in_user, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_filter :correct_user,   only: [:edit, :update, :destroy]
+  before_filter :admin_user,     only: [:index]
 
   # GET /narratives
   # GET /narratives.json

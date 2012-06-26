@@ -1,10 +1,12 @@
-<% provide(:title, 'Events') %>
+<% provide(:title, 'All Events') %>
 <h1>All Events</h1>
-<h2><%= link_to 'New Event', new_event_path %></h2>
-<%= will_paginate %>
 
+<% if current_user.account == "admin" %>
+	<h2><%= link_to 'New Event', new_event_path %></h2>
+<% end %>
+
+<%= will_paginate %>
 <ul class="events">
   <%= render @events %>
 </ul>
-
 <%= will_paginate %>
