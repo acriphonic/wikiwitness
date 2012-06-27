@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
 		user.username = username.downcase
 	end
 
-	before_save :assign_account_type
+	before_create :assign_account_type
 	before_save :create_remember_token
 
 	private
