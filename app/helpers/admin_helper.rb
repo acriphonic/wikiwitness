@@ -17,6 +17,6 @@ module AdminHelper
 		end
 
 		def admin_user?(user)
-			user.account = "admin"
+			user.account == "admin"
 		end
 end
