@@ -1,5 +1,4 @@
 <% provide(:title, @event.name) %>
-<p id="notice"><%= notice %></p>
 <h1><%= @event.name %></h1>
 <div class = "info">
 <h1>Information</h1>
@@ -10,16 +9,17 @@
   </br>Status: <%= @event.status %>
   </br>Summary: <%= @event.summary %>
 </p>
+<h3>
 <% if admin_user?(current_user) %>
-    <%= link_to "Edit", edit_event_path(@event) %>
-    <%= link_to "Delete", event, method: :delete,
+    <%= link_to "Edit", edit_event_path(@event) %> | 
+    <%= link_to "Delete", @event, method: :delete,
                                   data: { confirm: "You sure?" } %>
 <% end %>
-<h3></h3>
+</h3>
 </div>
 
 <h2>Narratives</h2>
 
-<%= link_to "Create Narrative", new_event_narrative_path(@event) %>
+<h4><%= link_to "Create Narrative", new_event_narrative_path(@event) %></h4>
 
 <%= render :partial => @event.narratives %>

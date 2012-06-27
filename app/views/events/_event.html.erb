@@ -1,5 +1,5 @@
 <li>
-  <%= link_to event.name, event %>
+  <%= link_to event.name, event %> | 
   <% if admin_user?(current_user) %>
     <%= link_to "delete", event, method: :delete,
                                   data: { confirm: "You sure?" } %>

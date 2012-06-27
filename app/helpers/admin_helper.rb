@@ -13,7 +13,7 @@ module AdminHelper
 		end
 
 		def admin_user
-		  redirect_to(root_path) unless (current_user.account == "admin")
+		  redirect_to(root_path) unless (admin_user?(current_user))
 		end
 
 		def admin_user?(user)
