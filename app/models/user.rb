@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
 	attr_accessible :dob, :email, :name, :password, :username, :password_confirmation
 	
 	has_many :narratives
+	has_many :events, :through => :narratives
 
 	has_secure_password
 	VALID_USERNAME_REGEX = /^[a-zA-Z0-9_]*[a-zA-Z][a-zA-Z0-9_]*$/
