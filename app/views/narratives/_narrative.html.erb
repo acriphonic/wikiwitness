@@ -9,7 +9,7 @@
 <h3>
 <% if current_user?(narrative.user) || admin_account?(current_user) %>
 	<%= link_to 'Edit', edit_narrative_path(narrative) %> |
-	<%= link_to "Delete", narrative, method: :delete,
+	<%= link_to "Delete", @narrative, method: :delete,
                               data: { confirm: "You sure?" } %>
 <% end %>
 </h3>
