@@ -48,6 +48,7 @@ class NarrativesController < ApplicationController
   def create
     @narrative = @event.narratives.build(params[:narrative])
     @narrative.user = current_user
+    @narrative.content = line_break(@narrative.content)
 
     respond_to do |format|
       if @narrative.save
