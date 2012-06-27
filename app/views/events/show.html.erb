@@ -19,7 +19,8 @@
 </div>
 
 <h2>Narratives</h2>
-
+<% if !@event.users.include?(current_user) %>
 <h4><%= link_to "Create Narrative", new_event_narrative_path(@event) %></h4>
-
+</br></br>
+<% end %>
 <%= render :partial => @event.narratives %>

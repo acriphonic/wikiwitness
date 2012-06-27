@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
 	attr_accessible :dob, :email, :name, :password, :username, :password_confirmation
 	
 	has_many :narratives
+	has_many :events, :through => :narratives
 
 	has_secure_password
 	VALID_USERNAME_REGEX = /^[a-zA-Z0-9_]*[a-zA-Z][a-zA-Z0-9_]*$/
@@ -38,7 +39,7 @@ class User < ActiveRecord::Base
 		user.username = username.downcase
 	end
 
-	before_save :assign_account_type
+	before_create :assign_account_type
 	before_save :create_remember_token
 
 	private

@@ -1,7 +1,8 @@
 class NarrativesController < ApplicationController
   before_filter :load_current_event, only: [:new, :create]
   before_filter :signed_in_user, only: [:index, :new, :create, :edit, :update, :destroy]
-  before_filter :correct_user,   only: [:edit, :update, :destroy]
+  before_filter :already_posted, only: [:new, :create]
+  before_filter :correct_author,   only: [:edit, :update, :destroy]
   before_filter :admin_user,     only: [:index]
 
   # GET /narratives
@@ -80,16 +81,28 @@ class NarrativesController < ApplicationController
   # DELETE /narratives/1.json
   def destroy
     @narrative = Narrative.find(params[:id])
-    @event = Event.find(params[:id])
+    @event = @narrative.event
     @narrative.destroy
 
     respond_to do |format|
-      format.html { redirect_to(@article, :notice => 'Narrative was successfully deleted.') }
+      format.html { redirect_to(@event, :notice => 'Narrative was successfully deleted.') }
       format.json { head :no_content }
     end
   end
 
   private
+    def correct_author
+      @narrative = Narrative.find(params[:id])
+      @user = User.find(@narrative.user_id)
+      redirect_to(root_path) unless current_user?(@user) || admin_user?(@user)
+    end
+
+    def already_posted
+      if current_user.events.include?(@event)
+        redirect_to @event, notice: 'You have already created a narrative for this event.
+          Please edit your old narrative rather than contribute a new one.'
+      end
+    end
 
     def load_current_event
       @event = Event.find(params[:event_id])

@@ -15,6 +15,7 @@
 class Event < ActiveRecord::Base
   attr_accessible :enddate, :name, :startdate, :status, :summary
   has_many :narratives
+  has_many :users, :through => :narratives
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :status, presence: true

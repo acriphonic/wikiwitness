@@ -17,6 +17,6 @@ module AdminHelper
 		end
 
 		def admin_user?(user)
-			user.account == "admin"
+			signed_in? && (user.account == "admin")
 		end
 end
