@@ -1,14 +1,18 @@
 <div class="narrative">
 <h1>Title: <%= narrative.name %></h1>
+<% @user = User.find(narrative.user_id) %>
 </br>
 <p>
-  <i>Author: <%= narrative.user_id %>
+  <i>Author: <%= @user.name %>
+  </br>Username: <%= @user.username %>
   </br>Location: <%= narrative.location %></i>
-  </br></br><%= narrative.content %>
+  </br></br><%= simple_format(narrative.content) %>
 </p>
 <h3>
+<% if current_user?(narrative.user) %>
+	<%= link_to 'Edit', edit_narrative_path(narrative) %> | 
+<% end %>
 <% if current_user?(narrative.user) || admin_user?(current_user) %>
-	<%= link_to 'Edit', edit_narrative_path(narrative) %> |
 	<%= link_to "Delete", narrative, method: :delete,
                               data: { confirm: "You sure?" } %>
 <% end %>

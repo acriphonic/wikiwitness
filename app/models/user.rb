@@ -7,7 +7,6 @@
 #  email           :string(255)
 #  name            :string(255)
 #  account         :string(255)
-#  dob             :integer
 #  created_at      :datetime        not null
 #  updated_at      :datetime        not null
 #  password_digest :string(255)
@@ -15,7 +14,7 @@
 #
 
 class User < ActiveRecord::Base
-	attr_accessible :dob, :email, :name, :password, :username, :password_confirmation
+	attr_accessible :email, :name, :password, :username, :password_confirmation
 	
 	has_many :narratives
 	has_many :events, :through => :narratives
@@ -31,8 +30,6 @@ class User < ActiveRecord::Base
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, uniqueness: { case_sensitive: false },
 		format: { with: VALID_EMAIL_REGEX }
-	validates :dob, presence: true, numericality: { only_integer: true, greater_than: 1895,
-		less_than: 2000 }
 
 	before_save do |user| 
 		user.email = email.downcase

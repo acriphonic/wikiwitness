@@ -9,15 +9,16 @@
 <p>
   Name: <%= @user.name %>
   </br>Username: <%= @user.username %>
-  </br>Email: <%= @user.email %>
-  </br>Date of Birth: <%= @user.dob %>
-</p>
 <% if current_user?(@user) || admin_user?(@user) == "admin" %>
-    <h3><%= link_to "Edit", edit_user_path(@user) %> | 
+	</br>Email: <%= @user.email %> (not displayed)
+</p>
+    <h3><%= link_to "Edit account or Change password", edit_user_path(@user) %> | 
     <%= link_to "Delete my account", @user, method: :delete,
                                   data: { confirm: "Are you sure? This action
                                   	cannot be undone." } %>
     </h3>
+<% else %>
+</p>
 <% end %>
 </div>
 
