@@ -4,7 +4,7 @@
 </br>
 <p>
   <i>Author: <%= @user.name %>
-  </br>Username: <%= @user.username %>
+  </br>Username: <%= link_to @user.username, user_path(@user) %>
   </br>Location: <%= narrative.location %></i>
   </br></br><%= simple_format(narrative.content) %>
 </p>
