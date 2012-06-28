@@ -1,20 +1,27 @@
 <div class="narrative">
 <h1>Title: <%= narrative.name %></h1>
-<% @user = User.find(narrative.user_id) %>
 </br>
 <p>
-  <i>Author: <%= @user.name %>
-  </br>Username: <%= link_to @user.username, user_path(@user) %>
-  </br>Location: <%= narrative.location %></i>
-  </br></br><%= simple_format(narrative.content) %>
+	<% if @event.nil? %>
+		<% @event = Event.find(narrative.event_id) %>
+		<i>Event: <%= link_to @event.name, event_path(@event) %>
+	<% end %>
+  	<% if @user.nil? %>
+  		<% @user = User.find(narrative.user_id) %>
+  		<i>Author: <%= @user.name %>
+  		</br>Username: <%= link_to @user.username, user_path(@user) %>
+  	<% end %>
+  	</br>Location: <%= narrative.location %></i>
+  	</br>
+  	</br><%= simple_format(narrative.content) %>
 </p>
 <h3>
-<% if current_user?(narrative.user) %>
-	<%= link_to 'Edit', edit_narrative_path(narrative) %> | 
-<% end %>
-<% if current_user?(narrative.user) || admin_user?(current_user) %>
-	<%= link_to "Delete", narrative, method: :delete,
+	<% if current_user?(narrative.user) %>
+		<%= link_to 'Edit', edit_narrative_path(narrative) %> | 
+	<% end %>
+	<% if current_user?(narrative.user) || admin_user?(current_user) %>
+		<%= link_to "Delete", narrative, method: :delete,
                               data: { confirm: "You sure?" } %>
-<% end %>
+	<% end %>
 </h3>
 </div>
