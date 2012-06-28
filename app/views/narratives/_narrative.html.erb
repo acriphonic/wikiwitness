@@ -3,13 +3,13 @@
 </br>
 <p>
 	<% if @event.nil? %>
-		<% @event = Event.find(narrative.event_id) %>
-		<i>Event: <%= link_to @event.name, event_path(@event) %>
+		<% event = Event.find(narrative.event_id) %>
+		<i>Event: <%= link_to event.name, event_path(event) %>
 	<% end %>
   	<% if @user.nil? %>
-  		<% @user = User.find(narrative.user_id) %>
-  		<i>Author: <%= @user.name %>
-  		</br>Username: <%= link_to @user.username, user_path(@user) %>
+  		<% user = User.find(narrative.user_id) %>
+  		<i>Author: <%= user.name %>
+  		</br>Username: <%= link_to user.username, user_path(user) %>
   	<% end %>
   	</br>Location: <%= narrative.location %></i>
   	</br>
