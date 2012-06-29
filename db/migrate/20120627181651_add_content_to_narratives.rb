@@ -4,7 +4,7 @@ class AddContentToNarratives < ActiveRecord::Migration
   end
   
   def down
-  	add_column :narratives, :content, :text
+  	add_column :narratives, :content, :string
   	add_index :narratives, :content
   end
 end

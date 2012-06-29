@@ -10,7 +10,7 @@
 #  updated_at :datetime        not null
 #  user_id    :integer
 #  event_id   :integer
-#  content    :text
+#  content    :string(255)
 #
 
 require 'spec_helper'

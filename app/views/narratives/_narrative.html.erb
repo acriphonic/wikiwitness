@@ -4,7 +4,7 @@
 <p>
   <i>Author: <%= narrative.user_id %>
   </br>Location: <%= narrative.location %></i>
-  </br></br><%= narrative.content %>
+  </br></br><%= simple_format(narrative.content) %>
 </p>
 <h3>
 <% if current_user?(narrative.user) || admin_user?(current_user) %>
