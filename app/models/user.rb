@@ -39,6 +39,15 @@ class User < ActiveRecord::Base
 	before_create :assign_account_type
 	before_save :create_remember_token
 
+	def self.search(search)
+  		if search
+  			find(:all, :conditions => ['username LIKE ? or name LIKE ?',
+  				"%#{search}%", "%#{search}%"])
+  		else
+  			find(:all)
+  		end
+  	end
+
 	private
 
 		def assign_account_type

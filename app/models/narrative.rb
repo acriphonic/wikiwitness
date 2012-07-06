@@ -24,4 +24,12 @@ class Narrative < ActiveRecord::Base
   validates_uniqueness_of :user_id, :scope => :event_id
 
   default_scope order: 'narratives.created_at DESC'
+
+  def self.search(search)
+  	if search
+  		find(:all, :conditions => ['content LIKE ?', "%#{search}%"])
+  	else
+  		find(:all)
+  	end
+  end
 end
