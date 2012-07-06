@@ -1,0 +1,15 @@
+Search for an event
+<%= form_tag(events_path, :method => 'get') do %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Search", :name => nil, :class => 'btn btn-large btn-primary' %>
+<% end %>
+Search narrative text
+<%= form_tag(narratives_path, :method => 'get') do %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Search", :content => nil, :class => 'btn btn-large btn-primary' %>
+<% end %>
+Search for a user
+<%= form_tag(users_path, :method => 'get') do %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Search",:username => nil, :class => 'btn btn-large btn-primary' %>
+<% end %>

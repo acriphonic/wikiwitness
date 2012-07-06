@@ -1,4 +1,4 @@
-$navbarLinkColor: #CEFFCE;
+$navbarLinkColor: #ffffff;
 
 @import "bootstrap";
 
@@ -19,12 +19,10 @@ $niceBlandGreen: #CEFFCE;
 
 html {
   overflow-y: scroll;
-  background: $niceBlandGreen;
 }
 
 body {
   padding-top: 80px;
-  background-color: $niceBlandGreen;
 }
 
 section {
