@@ -1,4 +1,4 @@
-$navbarLinkColor: white;
+$navbarLinkColor: #CEFFCE;
 
 @import "bootstrap";
 
@@ -12,16 +12,19 @@ $navbarLinkColor: white;
 }
 
 $grayMediumLight: #eaeaea;
-$shinyorange: #DC5C05;
+$shinyOrange: #FF6600;
+$niceBlandGreen: #CEFFCE;
 
 /* universal */
 
 html {
   overflow-y: scroll;
+  background: $niceBlandGreen;
 }
 
 body {
   padding-top: 80px;
+  background-color: $niceBlandGreen;
 }
 
 section {
@@ -30,6 +33,10 @@ section {
 
 textarea {
   resize: vertical;
+}
+
+.hero-unit {
+  background: $niceBlandGreen;
 }
 
 .login {
@@ -44,7 +51,7 @@ textarea {
 }
 
 .navbar-inner {
-  background: $shinyorange;
+  background: $shinyOrange;
 }
 
 /* typography */
@@ -86,7 +93,6 @@ p {
   line-height: 1.7em;
 }
 
-
 /* header */
 
 #logo {
@@ -102,7 +108,7 @@ p {
   &:hover {
     font-size: 1.75em;
     color: white;
-    background: $shinyorange;
+    background: $shinyOrange;
     text-decoration: none;
   }
 }

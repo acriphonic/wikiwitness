@@ -15,6 +15,10 @@
 
 class User < ActiveRecord::Base
 	attr_accessible :email, :name, :password, :username, :password_confirmation
+
+	audited
+
+	has_associated_audits
 	
 	has_many :narratives
 	has_many :events, :through => :narratives

@@ -9,11 +9,14 @@
 #  updated_at :datetime        not null
 #  user_id    :integer
 #  event_id   :integer
-#  content    :string(255)
+#  content    :text
 #
 
 class Narrative < ActiveRecord::Base
   attr_accessible :content, :location, :name
+
+  audited :associated_with => :user
+
   belongs_to :event
   belongs_to :user
   
