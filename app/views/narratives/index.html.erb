@@ -1,0 +1,11 @@
+<% provide(:title, 'Narratives') %>
+<h1>Narratives</h1>
+
+<%= will_paginate %>
+<ul class="narratives">
+  <%= render @narratives %>
+  <% if @narratives.empty? %>
+  	<p>Sorry, we couldn't find any narratives that contain that text.</p>
+  <% end %>
+</ul>
+<%= will_paginate %>

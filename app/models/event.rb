@@ -20,4 +20,12 @@ class Event < ActiveRecord::Base
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :status, presence: true
   validates :startdate, presence: true
+
+  def self.search(search)
+  	if search
+  		find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+  	else
+  		find(:all)
+  	end
+  end
 end

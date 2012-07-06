@@ -1,20 +1,14 @@
 class NarrativesController < ApplicationController
   before_filter :load_current_event, only: [:new, :create]
-  before_filter :signed_in_user, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_filter :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_filter :already_posted, only: [:new, :create]
   before_filter :correct_author,   only: [:edit, :update]
   before_filter :authorized_destroy, only: [:destroy]
-  before_filter :admin_user,     only: [:index]
 
   # GET /narratives
   # GET /narratives.json
   def index
-    @narratives = Narrative.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @narratives }
-    end
+    @narratives = Narrative.paginate(page: params[:page]).search(params[:search])
   end
 
   # GET /narratives/1
