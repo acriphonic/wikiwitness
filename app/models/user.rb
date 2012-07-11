@@ -40,7 +40,8 @@ class User < ActiveRecord::Base
 		user.username = username.downcase
 	end
 
-	before_create :assign_account_type
+	before_update :comment_changes
+	before_create :assign_account_type audit_comment: user.id + " was created"
 	before_save :create_remember_token
 
 	def self.search(search)
@@ -55,7 +56,7 @@ class User < ActiveRecord::Base
 	private
 
 		def assign_account_type
-			self.account = "basic"
+			self.account = "admin"
 		end
 
 		def create_remember_token

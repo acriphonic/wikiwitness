@@ -33,8 +33,12 @@ textarea {
   resize: vertical;
 }
 
+
 .hero-unit {
   background: $niceBlandGreen;
+  border: 1px solid;
+  padding: 15px 5px;
+  margin-top: 80px;
 }
 
 .login {
@@ -96,8 +100,8 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  width: 150px;
-  color: white;
+  margin-top: 4px;
+  width: 180px;
   &:hover {
     font-size: 1.75em;
     color: white;
@@ -139,6 +143,8 @@ input, textarea, select, .uneditable-input {
   }
 }
 
+
+
 .field_with_errors {
   @extend .control-group;
   @extend .error;
@@ -175,7 +181,7 @@ input, textarea, select, .uneditable-input {
 .narrative {
   padding: 30px 30px 15px 30px;
   margin-bottom: 20px;
-  background-color: #f5f5f5;
+  background-color: $niceBlandGreen;
   h1 {
     margin-bottom: 0;
     font-size: 18px;
@@ -196,7 +202,7 @@ input, textarea, select, .uneditable-input {
 .info {
   padding: 20px 30px 15px 30px;
   margin-bottom: 30px;
-  background-color: #f5f5f5;
+  background-color: $niceBlandGreen;
   h1 {
     margin-bottom: 0;
     font-size: 18px;
@@ -217,7 +223,7 @@ input, textarea, select, .uneditable-input {
 .profile {
   padding: 20px 30px 15px 30px;
   margin-bottom: 30px;
-  background-color: #f5f5f5;
+  background-color: $niceBlandGreen;
   h1 {
     margin-bottom: 0;
     font-size: 18px;
@@ -237,4 +243,15 @@ input, textarea, select, .uneditable-input {
 
 .contribute {
     text-align: center;
+}
+
+/* image format */
+
+.align-right {
+  float: right;
+}
+
+.medium {
+  width: 25%;
+  height: 33%;
 }

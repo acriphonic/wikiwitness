@@ -11,6 +11,7 @@
 #  user_id    :integer
 #  event_id   :integer
 #  content    :text
+#  image_link :string(255)
 #
 
 require 'spec_helper'

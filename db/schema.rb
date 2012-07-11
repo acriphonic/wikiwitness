@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120703183840) do
+ActiveRecord::Schema.define(:version => 20120709190626) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20120703183840) do
     t.integer  "user_id"
     t.integer  "event_id"
     t.text     "content"
+    t.string   "image_link"
   end
 
   add_index "narratives", ["content"], :name => "index_narratives_on_content"

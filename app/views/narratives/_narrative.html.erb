@@ -1,4 +1,5 @@
 <div class="narrative">
+<%= image_tag narrative.image_link, class: "align-right medium" %>
 <h1>Title: <%= narrative.name %></h1>
 </br>
 <p>
@@ -20,8 +21,7 @@
 		<%= link_to 'Edit', edit_narrative_path(narrative) %> | 
 	<% end %>
 	<% if current_user?(narrative.user) || admin_user?(current_user) %>
-		<%= link_to "Delete", narrative, method: :delete,
-                              data: { confirm: "You sure?" } %>
+		<%= link_to "Delete", narrative, method: :delete, data: { confirm: "You sure?" } %>
 	<% end %>
 </h3>
 </div>
