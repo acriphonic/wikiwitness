@@ -7,7 +7,8 @@ Wikiwitness::Application.routes.draw do
   match '/faq', to: 'static_pages#faq'
   match '/contact_us', to: 'static_pages#contact'
   match '/getting_started', to: 'static_pages#getting_started'
-  match '/search', to: 'static_pages#search'
+  match '/search_area', to: 'static_pages#search'
+  match '/search', to: 'search#search'
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete

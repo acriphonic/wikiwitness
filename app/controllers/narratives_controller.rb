@@ -6,31 +6,18 @@ class NarrativesController < ApplicationController
   before_filter :authorized_destroy, only: [:destroy]
 
   # GET /narratives
-  # GET /narratives.json
   def index
     @narratives = Narrative.paginate(page: params[:page]).search(params[:search])
   end
 
   # GET /narratives/1
-  # GET /narratives/1.json
   def show
     @narrative = Narrative.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @narrative }
-    end
   end
 
   # GET /narratives/new
-  # GET /narratives/new.json
   def new
     @narrative = Narrative.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @narrative }
-    end
   end
 
   # GET /narratives/1/edit
@@ -39,7 +26,6 @@ class NarrativesController < ApplicationController
   end
 
   # POST /narratives
-  # POST /narratives.json
   def create
     @narrative = @event.narratives.build(params[:narrative])
     @narrative.user = current_user
@@ -56,7 +42,6 @@ class NarrativesController < ApplicationController
   end
 
   # PUT /narratives/1
-  # PUT /narratives/1.json
   def update
     @narrative = Narrative.find(params[:id])
     @event = @narrative.event

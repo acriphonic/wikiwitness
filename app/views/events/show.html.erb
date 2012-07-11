@@ -23,4 +23,14 @@
 <h4><%= link_to "Create Narrative", new_event_narrative_path(@event) %></h4>
 </br></br>
 <% end %>
-<%= render :partial => @event.narratives %>
+
+<div class = "search">
+<h4>Search Narratives for this Event:
+<%= form_tag(@event, :class => 'form-search', :method => 'get') do %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Search", :content => nil, :class => 'btn btn-large btn-primary' %>
+<% end %>
+</h4>
+</div>
+
+<%= render :partial => @event.narratives.search(params[:search]) %>

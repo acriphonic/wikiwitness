@@ -29,7 +29,7 @@ class Narrative < ActiveRecord::Base
   default_scope order: 'narratives.created_at DESC'
 
   def self.search(search)
-  	if search
+    if search
   		find(:all, :conditions => ['content LIKE ?', "%#{search}%"])
   	else
   		find(:all)

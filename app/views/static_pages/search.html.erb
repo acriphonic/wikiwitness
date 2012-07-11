@@ -1,15 +1,7 @@
-Search for an event
-<%= form_tag(events_path, :method => 'get') do %>
+Search
+</br></br>
+<%= form_tag(search_path, :method => 'get') do %>
 <%= text_field_tag :search, params[:search] %>
+<%= select_tag :scope, options_for_select(%w{ User Event Narrative }, 'Event') %>
 <%= submit_tag "Search", :name => nil, :class => 'btn btn-large btn-primary' %>
-<% end %>
-Search narrative text
-<%= form_tag(narratives_path, :method => 'get') do %>
-<%= text_field_tag :search, params[:search] %>
-<%= submit_tag "Search", :content => nil, :class => 'btn btn-large btn-primary' %>
-<% end %>
-Search for a user
-<%= form_tag(users_path, :method => 'get') do %>
-<%= text_field_tag :search, params[:search] %>
-<%= submit_tag "Search",:username => nil, :class => 'btn btn-large btn-primary' %>
 <% end %>
