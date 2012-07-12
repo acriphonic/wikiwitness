@@ -1,0 +1,9 @@
+<%= form_for([@narrative, @narrative.recommendations.build]) do |f| %>
+  <div class="field">
+    <%= f.label "Snippet (optional)" %><br />
+    <%= f.text_field :snippet %>
+  </div>
+  <div class="Recommend">
+    <%= f.submit "Recommend" %>
+  </div>
+<% end %>

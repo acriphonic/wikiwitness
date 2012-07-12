@@ -33,4 +33,5 @@
 </h4>
 </div>
 
-<%= render :partial => @event.narratives.search(params[:search]) %>
+<%= render :partial => @event.narratives.search(params[:search]).sort_by {|narrative|
+	narrative.recommendations.size }.reverse %>
