@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20120711193648) do
     t.integer  "user_id"
     t.integer  "event_id"
     t.text     "content"
+    t.string   "image_link"
   end
 
   add_index "narratives", ["content"], :name => "index_narratives_on_content"

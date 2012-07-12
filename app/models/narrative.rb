@@ -10,10 +10,11 @@
 #  user_id    :integer
 #  event_id   :integer
 #  content    :text
+#  image_link :string(255)
 #
 
 class Narrative < ActiveRecord::Base
-  attr_accessible :content, :location, :name
+  attr_accessible :content, :location, :name, :image_link
 
   audited :associated_with => :user
 
