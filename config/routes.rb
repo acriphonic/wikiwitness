@@ -14,14 +14,14 @@ Wikiwitness::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
 
   resources :events do
-    resources :narratives, only: [:new, :create, :show, :edit, :destroy] do
+    resources :narratives, only: [:new, :create, :show, :edit, :destroy, :update] do
       resources :recommendations, only: [:new, :create, :edit, :destroy, :show]
     end
   end
   resources :users do
-    resources :narratives, only: [:show, :edit, :destroy]
+    resources :narratives, only: [:show, :edit, :update, :destroy]
   end
-  resources :narratives, only: [:index, :new, :create, :edit, :destroy, :show] do
+  resources :narratives, only: [:index, :new, :create, :edit, :destroy, :show, :update] do
     resources :recommendations, only: [:new, :create, :edit, :destroy]
   end
   resources :sessions, only: [:new, :create, :destroy]

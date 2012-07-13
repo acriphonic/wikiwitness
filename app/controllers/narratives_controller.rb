@@ -48,7 +48,7 @@ class NarrativesController < ApplicationController
 
     respond_to do |format|
       if @narrative.update_attributes(params[:narrative])
-        format.html { redirect_to @event, notice: 'Narrative was successfully updated.' }
+        format.html { redirect_to @narrative, notice: 'Narrative was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
