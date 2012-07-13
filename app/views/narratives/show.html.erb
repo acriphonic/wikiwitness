@@ -1,7 +1,9 @@
 <% provide(:title, @narrative.name) %>
 <div class="narrative">
 <% if !@narrative.image_link.nil? %>
-  <%= image_tag @narrative.image_link, class: "align-right medium" %>
+  <%= link_to @narrative.image_link do %>
+  	<%= image_tag @narrative.image_link, class: "align-right medium" %>
+  <% end %>
 <% end %>
 <h1>Title: <%= @narrative.name %></h1>
 </br>
