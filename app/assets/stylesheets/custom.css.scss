@@ -1,7 +1,21 @@
-$navbarLinkColor: #ffffff;
+/* colors */
+
+$mainWhite: #ffffff;
+$mainBlack: #000000;
+$accentBlue: #3399ff;
+$accentRed: #ff3300;
+$accentOrange: #ff6600;
+$accentMagenta: #ff0066;
+$lightGrey: #cccccc;
+$darkGrey: #999999;
+
+$grayMediumLight: #eaeaea;
+$niceBlandGreen: #CEFFCE;
+
+$navbarLinkColor: $mainWhite;
+
 
 @import "bootstrap";
-
 
 /* mixins, variables, etc. */
 
@@ -11,18 +25,16 @@ $navbarLinkColor: #ffffff;
   box-sizing: border-box;
 }
 
-$grayMediumLight: #eaeaea;
-$shinyOrange: #FF6600;
-$niceBlandGreen: #CEFFCE;
-
 /* universal */
 
 html {
   overflow-y: scroll;
+  background: $mainBlack;
 }
 
 body {
   padding-top: 60px;
+  background: $mainBlack;
 }
 
 section {
@@ -33,6 +45,9 @@ textarea {
   resize: vertical;
 }
 
+.bar {
+  float: top;
+}
 
 .hero-unit {
   margin-top: 80px;
@@ -50,13 +65,14 @@ textarea {
 }
 
 .navbar-inner {
-  background: $shinyOrange;
+  background: $accentBlue;
 }
 
 /* typography */
 
 h1, h2 {
   line-height: 1;
+  color: $mainWhite;
 }
 
 h1 {
@@ -72,11 +88,11 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
 }
 
 h4 {
   text-align: center;
+  color: $mainWhite;
 }
 
 h5 {
@@ -84,7 +100,7 @@ h5 {
   letter-spacing: -1px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: $mainWhite;
 }
 
 p {
@@ -97,14 +113,8 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  margin-top: 4px;
+  margin-top: 8px;
   width: 180px;
-  &:hover {
-    font-size: 1.75em;
-    color: white;
-    background: $shinyOrange;
-    text-decoration: none;
-  }
 }
 
 /* miscellaneous */
@@ -178,12 +188,13 @@ input, textarea, select, .uneditable-input {
 .narrative {
   padding: 30px 30px 15px 30px;
   margin-bottom: 20px;
-  background-color: $grayLighter;
+  background-color: $mainWhite;
   h1 {
     margin-bottom: 0;
     font-size: 18px;
     letter-spacing: -1px;
     text-align: left;
+    color: $darkGrey;
   }
   p {
     font-size: 12px;
@@ -199,12 +210,13 @@ input, textarea, select, .uneditable-input {
 .info {
   padding: 20px 30px 15px 30px;
   margin-bottom: 30px;
-  background-color: $grayLighter;
+  background-color: $mainWhite;
   h1 {
     margin-bottom: 0;
     font-size: 18px;
     letter-spacing: -1px;
     text-align: left;
+    color: $darkGrey;
   }
   p {
     font-size: 12px;
@@ -227,12 +239,13 @@ input, textarea, select, .uneditable-input {
 .profile {
   padding: 20px 30px 15px 30px;
   margin-bottom: 30px;
-  background-color: $grayLighter;
+  background-color: $mainWhite;
   h1 {
     margin-bottom: 0;
     font-size: 18px;
     letter-spacing: -1px;
     text-align: left;
+    color: $darkGrey;
   }
   p {
     font-size: 18px;
@@ -242,6 +255,28 @@ input, textarea, select, .uneditable-input {
     font-size: 13px;
     line-height: 1.7em;
     text-align: right;
+  }
+}
+
+.recommendation {
+  padding: 20px 30px 0px 30px;
+  background-color: $lightGrey;
+  h1 {
+    margin-bottom: 0;
+    font-size: 18px;
+    letter-spacing: -1px;
+    text-align: center;
+    color: $accentBlue;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 200;
+    text-align: center;
+  }
+  h3 {
+    font-size: 13px;
+    line-height: 1.7em;
+    text-align: center;
   }
 }
 

@@ -3,7 +3,9 @@
 <% if !recommendation.snippet.nil? %>
 	<p><i><%= recommendation.snippet %></i></p>
 <% end %>
+<h3>
 <% if current_user?(recommendation.user) %>
 	<%= button_to 'Unrecommend', event_narrative_recommendation_path(@narrative.event_id, @narrative), :method => :delete %>
 <% end %>
+</h3>
 </div>
