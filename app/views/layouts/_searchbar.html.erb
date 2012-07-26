@@ -1,0 +1,21 @@
+<div class="navbar">
+<div class="navbar-inner navsearch">
+<div class="container" style="width:auto">
+  <nav>
+    <ul class="nav pull-left">
+    	<li><h1>Narratives</h1></li>
+      <% if !@event.users.include?(current_user) %>
+      <li><%= link_to "were you there? please tell us your story", new_event_narrative_path(@event) %></li>
+      <% end %>
+    </ul>
+
+    <ul class="nav pull-right">
+      <%= form_tag(@event, :class => 'form-search', :method => 'get') do %>
+      <li><%= text_field_tag :search, params[:search] %></li>
+      <% end %>
+    </ul>
+    <ul class="nav pull-right"><li><%= link_to "Search", search_area_path %></li></ul>
+  </nav>
+</div>
+</div>
+</div>
