@@ -64,6 +64,32 @@ $subheaderHeight: 26px;
   border-radius: 0;
 }
 
+.form-search {
+  padding: 0;
+  margin: 0;
+}
+
+.nav h1 {
+  font-size: 30px;
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+.navsearch .nav a {
+  
+}
+
+.navsearch {
+  padding: 5px 5px 5px 0px;
+  margin: 0;
+  background: $accentRed;
+  height: 38px;
+  border-radius: 5px;
+}
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -188,28 +214,44 @@ input, textarea, select, .uneditable-input {
 .users {
   border-radius: 5px;
   list-style: none;
-  margin: 0;
+  margin: 0px 0px 0px 0px;
   li {
     overflow: auto;
-    padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:last-child {
-      border-bottom: 1px solid $grayLighter;
+    padding: 0% 0% 1% 10%;
     }
-  }
 }
 
 .events {
   border-radius: 5px;
   list-style: none;
-  margin: 0;
+  margin: 0px 0px 0px 0px;
   li {
     overflow: auto;
-    padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:last-child {
-      border-bottom: 1px solid $grayLighter;
+    padding: 0% 0% 1% 10%;
     }
+}
+
+
+.listing {
+  border-radius: 5px;
+  padding: 15px 30px 15px 30px;
+  margin-bottom: 20px;
+  background-color: $mainWhite;
+  h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+    letter-spacing: 5px;
+    text-align: center;
+    color: $accentMagenta;
+  }
+  p {
+    font-size: 12px;
+    font-weight: 200;
+  }
+  h3 {
+    font-size: 13px;
+    line-height: 1.7em;
+    text-align: right;
   }
 }
 
@@ -265,7 +307,7 @@ input, textarea, select, .uneditable-input {
 .info {
   border-radius: 5px;
   padding: 20px 30px 15px 30px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   background-color: $mainWhite;
   h1 {
     margin-bottom: 15px;
@@ -287,9 +329,41 @@ input, textarea, select, .uneditable-input {
 }
 
 .search {
-  padding: 0px 200px 0px 200px;
+  border-radius: 5px;
+  background-color: $mainWhite;
+  text-align: center;
+  padding: 0px 200px 1px 200px;
+  margin-bottom: 30px;
+  h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+    letter-spacing: 5px;
+    color: $accentMagenta;
+  }
+}
+
+.searchbar {
+  border-radius: 5px;
+  background-color: $mainWhite;
+  text-align: left;
+  padding: 20px 30px 15px 30px;
+  margin-bottom: 30px;
+  h1 {
+    color: $accentRed;
+    font-size: 30px;
+    letter-spacing: 1px;
+    text-align: left;
+    padding: 0px;
+  }
   h4 {
+    color: $accentMagenta;
     line-height: 2.0em;
+  }
+  li {
+    display: inline;
+    overflow: auto;
+    padding-right: 20px;
+    list-style-type: none;
   }
 }
 
