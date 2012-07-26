@@ -69,13 +69,14 @@ $subheaderHeight: 26px;
   margin: 0;
 }
 
-.nav h1 {
+.navsearch h1 {
   font-size: 30px;
   padding: 0;
   margin-left: 10px;
   margin-right: 20px;
   margin-top: 2px;
   margin-bottom: 0;
+  text-align: left;
 }
 
 .navsearch .nav a {
@@ -84,7 +85,7 @@ $subheaderHeight: 26px;
 
 .navsearch {
   padding: 5px 5px 5px 0px;
-  margin: 0;
+  margin: 0px 0px 20px 0px;
   background: $accentRed;
   height: 38px;
   border-radius: 5px;
