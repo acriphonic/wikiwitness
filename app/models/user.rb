@@ -17,7 +17,6 @@ class User < ActiveRecord::Base
 	attr_accessible :email, :name, :password, :username, :password_confirmation
 
 	audited
-
 	has_associated_audits
 	
 	has_many :narratives
@@ -42,6 +41,7 @@ class User < ActiveRecord::Base
 	end
 
 	before_save :create_remember_token
+	before_create :assign_account_type
 
 	def self.search(search)
   		if search

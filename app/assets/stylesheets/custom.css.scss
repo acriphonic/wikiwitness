@@ -29,11 +29,10 @@ $navbarLinkColor: $mainWhite;
 
 html {
   overflow-y: scroll;
-  background: $mainBlack;
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 20px;
   background: $mainBlack;
 }
 
@@ -45,12 +44,47 @@ textarea {
   resize: vertical;
 }
 
-.bar {
-  float: top;
+$navbarHeight: 60px;
+
+.navbig .nav { height: $navbarHeight; }
+.navbig .nav > li > a { padding: ($navbarHeight - 20)/2 10px (($navbarHeight - 20)/2 + 1); }
+.navbig .brand { padding: ((($navbarHeight - 20) / 2) * 0.8) 20px ((($navbarHeight - 20) / 2) * 1.2); }
+
+$subheaderHeight: 26px;
+
+.subheader .nav { height: $subheaderHeight; }
+.subheader .nav > li > a { padding: ($subheaderHeight - 20)/2 10px (($subheaderHeight - 20)/2 + 1); }
+.subheader .brand { padding: ((($subheaderHeight - 20) / 2) * 0.8) 20px ((($subheaderHeight - 20) / 2) * 1.2); }
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.navbar-inner {
+  border-radius: 0;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  margin-top: ($navbarHeight - 25) / 2;
+  width: 180px;
+}
+
+.roundedtop {
+  background: $accentBlue;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.roundedbottom {
+  background: $darkGrey;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .hero-unit {
-  margin-top: 80px;
+  margin-top: 30px;
   background: $accentRed;
 }
 
@@ -63,10 +97,6 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
-}
-
-.navbar-inner {
-  background: $accentBlue;
 }
 
 /* typography */
@@ -111,12 +141,7 @@ p {
 
 /* header */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  margin-top: 8px;
-  width: 180px;
-}
+
 
 /* miscellaneous */
 
@@ -161,6 +186,7 @@ input, textarea, select, .uneditable-input {
  /* users index */
 
 .users {
+  border-radius: 5px;
   list-style: none;
   margin: 0;
   li {
@@ -174,6 +200,7 @@ input, textarea, select, .uneditable-input {
 }
 
 .events {
+  border-radius: 5px;
   list-style: none;
   margin: 0;
   li {
@@ -187,6 +214,7 @@ input, textarea, select, .uneditable-input {
 }
 
 .narrative {
+  border-radius: 5px;
   padding: 30px 30px 15px 30px;
   margin-bottom: 20px;
   background-color: $mainWhite;
@@ -208,9 +236,13 @@ input, textarea, select, .uneditable-input {
   }
 }
 
-.info {
-  padding: 20px 30px 15px 30px;
-  margin-bottom: 30px;
+.narrative-plusimage {
+  border-radius: 5px;
+  padding: 30px 30px 15px 30px;
+  margin-bottom: 20px;
+  float: left;
+  width: 65%;
+  height: 200px;
   background-color: $mainWhite;
   h1 {
     margin-bottom: 0;
@@ -230,6 +262,30 @@ input, textarea, select, .uneditable-input {
   }
 }
 
+.info {
+  border-radius: 5px;
+  padding: 20px 30px 15px 30px;
+  margin-bottom: 30px;
+  background-color: $mainWhite;
+  h1 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-align: left;
+    color: $accentMagenta;
+  }
+  p {
+    font-size: 12px;
+    line-height: 1.2em;
+    font-weight: 200;
+  }
+  h3 {
+    font-size: 13px;
+    line-height: 1.7em;
+    text-align: right;
+  }
+}
+
 .search {
   padding: 0px 200px 0px 200px;
   h4 {
@@ -238,6 +294,7 @@ input, textarea, select, .uneditable-input {
 }
 
 .profile {
+  border-radius: 5px;
   padding: 20px 30px 15px 30px;
   margin-bottom: 30px;
   background-color: $mainWhite;
@@ -260,6 +317,7 @@ input, textarea, select, .uneditable-input {
 }
 
 .recommendation {
+  border-radius: 5px;
   padding: 20px 30px 0px 30px;
   background-color: $lightGrey;
   h1 {
@@ -295,4 +353,15 @@ input, textarea, select, .uneditable-input {
 .medium {
   width: 200px;
   height: 200px;
+}
+
+.narr-image {
+  border-radius: 5px;
+  float: right;
+  width: 246px;
+  height: 246px;
+}
+
+.wrapper {
+  width: 100%;
 }

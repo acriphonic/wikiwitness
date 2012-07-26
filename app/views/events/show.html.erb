@@ -1,8 +1,6 @@
 <% provide(:title, @event.name) %>
-<h1><%= @event.name %></h1>
 <div class = "info">
-<h1>Information</h1>
-</br>
+<h1><%= @event.name %></h1>
 <p>
   Start date: <%= @event.startdate %>
   </br>End date: <%= @event.enddate %>
@@ -21,7 +19,7 @@
 <h2>Narratives</h2>
 <% if !@event.users.include?(current_user) %>
 <h4><%= link_to "Create Narrative", new_event_narrative_path(@event) %></h4>
-</br></br>
+</br>
 <% end %>
 
 <div class = "search">
