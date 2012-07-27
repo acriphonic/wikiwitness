@@ -56,12 +56,16 @@ $subheaderHeight: 26px;
 .subheader .nav > li > a { padding: ($subheaderHeight - 20)/2 10px (($subheaderHeight - 20)/2 + 1); }
 .subheader .brand { padding: ((($subheaderHeight - 20) / 2) * 0.8) 20px ((($subheaderHeight - 20) / 2) * 1.2); }
 
+.container {
+  margin-bottom: 0px;
+}
+
 .navbar {
   margin-bottom: 0px;
 }
 
 .navbar-inner {
-  border-radius: 0;
+  border-radius: 0px;
 }
 
 .form-search {
@@ -85,7 +89,7 @@ $subheaderHeight: 26px;
 
 .navsearch {
   padding: 5px 5px 5px 0px;
-  margin: 0px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
   background: $accentRed;
   height: 38px;
   border-radius: 5px;
@@ -111,7 +115,7 @@ $subheaderHeight: 26px;
 }
 
 .hero-unit {
-  margin-top: 30px;
+  margin-top: 20px;
   background: $accentRed;
 }
 
@@ -286,10 +290,10 @@ input, textarea, select, .uneditable-input {
   border-radius: 5px;
   padding: 30px 30px 15px 30px;
   margin-bottom: 20px;
-  float: left;
-  width: 65%;
-  height: 200px;
+  width: auto;
+  height: 175px;
   background-color: $mainWhite;
+  overflow: hidden;
   h1 {
     margin-bottom: 0;
     font-size: 18px;
@@ -298,10 +302,12 @@ input, textarea, select, .uneditable-input {
     color: $darkGrey;
   }
   p {
+    margin-bottom: 0;
     font-size: 12px;
     font-weight: 200;
   }
   h3 {
+    margin-bottom:0;
     font-size: 13px;
     line-height: 1.7em;
     text-align: right;
@@ -325,6 +331,11 @@ input, textarea, select, .uneditable-input {
     line-height: 1.2em;
     font-weight: 200;
   }
+  li {
+    font-size: 12px;
+    line-height: 1.2em;
+    font-weight: 200;
+  }
   h3 {
     font-size: 13px;
     line-height: 1.7em;
@@ -336,14 +347,8 @@ input, textarea, select, .uneditable-input {
   border-radius: 5px;
   background-color: $mainWhite;
   text-align: center;
-  padding: 0px 200px 1px 200px;
-  margin-bottom: 30px;
-  h1 {
-    margin-bottom: 10px;
-    font-size: 30px;
-    letter-spacing: 5px;
-    color: $accentMagenta;
-  }
+  padding: 20px 200px 0px 200px;
+  margin: 20px 0px 0px 0px;
 }
 
 .searchbar {
@@ -374,23 +379,25 @@ input, textarea, select, .uneditable-input {
 .profile {
   border-radius: 5px;
   padding: 20px 30px 15px 30px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   background-color: $mainWhite;
-  h1 {
-    margin-bottom: 0;
-    font-size: 18px;
-    letter-spacing: -1px;
-    text-align: left;
-    color: $darkGrey;
-  }
   p {
     font-size: 18px;
+    line-height: 1em;
     font-weight: 200;
+    margin: 0;
+    padding: 0;
   }
   h3 {
     font-size: 13px;
     line-height: 1.7em;
     text-align: right;
+  }
+  h4 {
+    font-size: 13px;
+    line-height: 1.7em;
+    text-align: left;
+    color: $accentBlue
   }
 }
 
@@ -435,15 +442,24 @@ input, textarea, select, .uneditable-input {
 
 .narr-image img {
   border-radius: 5px;
+  margin-left: 20px;
+  margin-bottom: 20px;
   float: right;
-  max-height: 246px;
-  max-width: 246px;
+  max-height: 220px;
+  max-width: 220px;
 }
 
 .wrapper {
   width: 100%;
+  height: 200px;
 }
 
 .break-word {
   word-wrap: break-word;
+}
+
+.field {
+  margin: 0px;
+  padding: 0px;
+  line-height: 1 em;
 }

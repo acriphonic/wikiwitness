@@ -1,5 +1,8 @@
-<div class = "search">
+<% provide(:title, "Search") %>
+<div class = "navsearch">
 <h1>Search</h1>
+</div>
+<div class = "search">
 <%= form_tag(search_path, :method => 'get') do %>
 <%= select_tag :scope, options_for_select(%w{ User Event Narrative }, 'Event') %>
 <%= text_field_tag :search, params[:search] %>

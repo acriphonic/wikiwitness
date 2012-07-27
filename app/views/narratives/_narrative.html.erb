@@ -28,6 +28,9 @@
   </div>
 <% else %>
   <div id="wrapper">
+  <div class="narr-image">
+    <%= link_to image_tag(narrative.image_link), narrative.image_link %>
+  </div>
   <div class="narrative-plusimage break-word">
       <h1>Title: <%= narrative.name %></h1>
   </br>
@@ -54,9 +57,6 @@
         <%= link_to (narrative.recommendations.find(:first).snippet), narrative %>
       <% end %></h2>
   </p>
-  </div>
-  <div class="narr-image">
-    <%= link_to image_tag(narrative.image_link), narrative.image_link %>
   </div>
 </div>
 <% end %>

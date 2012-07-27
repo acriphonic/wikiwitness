@@ -1,5 +1,7 @@
 <% provide(:title, @user.name) %>
-<p id="notice"><%= notice %></p>
+<% if !notice.nil? %>
+	<p id="notice"><%= notice %></p>
+<% end %>
 <div class="navsearch">
 	<h1>Profile</h1>
 </div>
@@ -8,8 +10,9 @@
 		Name: <%= @user.name %>
 		</br>Username: <%= @user.username %>
 		<% if current_user?(@user) || admin_user?(@user) == "admin" %>
-			</br>Email: <%= @user.email %> (not displayed)
+			</br>Email: <%= @user.email %>
 			</p>
+			<h4><i>Don't worry! Your e-mail is not displayed to other users.</i></h4>
 			<h3><%= link_to "Edit account or Change password", edit_user_path(@user) %> | 
 			<%= link_to "Delete my account", @user, method: :delete,
 	                              data: { confirm: "Are you sure? This action
