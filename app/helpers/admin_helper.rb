@@ -5,7 +5,9 @@ module AdminHelper
 		  if admin_user?(@user)
 		  	puts "kitten"
 		  end
-		  redirect_to(root_path) unless (current_user?(@user) || admin_user?(@user)), notice: "You don't have permission to do that."
+		  unless (current_user?(@user) || admin_user?(@user))
+		  	redirect_to(root_path), notice: "You don't have permission to do that."
+		  end
 		end
 
 		def admin_user
