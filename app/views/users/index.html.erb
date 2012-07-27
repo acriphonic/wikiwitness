@@ -1,8 +1,10 @@
 <% provide(:title, 'Users') %>
-<div class="listing">
+<div class="navsearch">
 <h1>Users</h1>
+</div>
+<div class="listing">
 <%= will_paginate %>
-<ul class="users">
+<ul class="events">
   <%= render @users %>
   <% if @users.empty? %>
   	<p>Sorry, we couldn't find any users matching that name.</p>

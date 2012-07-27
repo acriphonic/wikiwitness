@@ -2,7 +2,10 @@ module AdminHelper
 	private
 		def correct_user
 		  @user = User.find(params[:id])
-		  redirect_to(root_path) unless current_user?(@user) || admin_user?(@user)
+		  if admin_user?(@user)
+		  	puts "kitten"
+		  end
+		  redirect_to(root_path) unless (current_user?(@user) || admin_user?(@user)), notice: "You don't have permission to do that."
 		end
 
 		def admin_user
