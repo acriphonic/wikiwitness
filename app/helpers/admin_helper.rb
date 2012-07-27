@@ -4,7 +4,8 @@ module AdminHelper
 		  @user = User.find(params[:id])
 		  if admin_user?(@user)
 		  	puts "kitten"
-		  redirect_to(root_path) unless current_user?(@user) || admin_user?(@user)
+		  end
+		  redirect_to(root_path) unless (current_user?(@user) || admin_user?(@user))
 		end
 
 		def admin_user
