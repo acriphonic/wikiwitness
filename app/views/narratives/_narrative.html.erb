@@ -20,9 +20,9 @@
     	</br>
     	</br><h2>
     	<% if narrative.recommendations.empty? %>
-    		<%= link_to (narrative.content[0..140] + "..."), narrative %>
+    		<%= link_to (wrap_long_string(narrative.content[0..140]).html_safe + "..."), narrative %>
     	<% else %>
-    		<%= link_to (narrative.recommendations.find(:first).snippet), narrative %>
+    		<%= link_to (wrap_long_string(narrative.recommendations.find(:first).snippet).html_safe), narrative %>
     	<% end %></h2>
   </p>
   </div>
@@ -49,9 +49,9 @@
       </br>
       </br><h2>
       <% if narrative.recommendations.empty? %>
-        <%= link_to (narrative.content[0..140] + "..."), narrative %>
+        <%= link_to (wrap_long_string(narrative.content[0..140]).html_safe + "..."), narrative %>
       <% else %>
-        <%= link_to (narrative.recommendations.find(:first).snippet), narrative %>
+        <%= link_to (wrap_long_string(narrative.recommendations.find(:first).snippet).html_safe), narrative %>
       <% end %></h2>
   </p>
   </div>

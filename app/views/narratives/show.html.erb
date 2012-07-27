@@ -1,6 +1,6 @@
 <% provide(:title, @narrative.name) %>
 <div class="narrative">
-<% if !@narrative.image_link.nil? %>
+<% if !@narrative.image_link.nil? && !@narrative.image_link = "" %>
   <%= link_to @narrative.image_link do %>
   	<%= image_tag @narrative.image_link, class: "align-right medium" %>
   <% end %>
@@ -19,7 +19,7 @@
   	<% end %>
   	</br>Location: <%= @narrative.location %></i>
   	</br>
-  	</br><%= simple_format(@narrative.content) %>
+  	</br><%= wrap_long_string(@narrative.content).html_safe %>
 </p>
 <h3>
 	<% if current_user?(@narrative.user) %>
