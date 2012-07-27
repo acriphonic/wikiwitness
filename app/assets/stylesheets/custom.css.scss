@@ -429,8 +429,8 @@ input, textarea, select, .uneditable-input {
 }
 
 .medium {
-  width: 200px;
-  height: 200px;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .narr-image img {
@@ -442,4 +442,8 @@ input, textarea, select, .uneditable-input {
 
 .wrapper {
   width: 100%;
+}
+
+.break-word {
+  word-wrap: break-word;
 }

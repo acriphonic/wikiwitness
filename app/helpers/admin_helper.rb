@@ -12,17 +12,4 @@ module AdminHelper
 		def admin_user?(user)
 			signed_in? && (user.account == "admin")
 		end
-
-		def split_str(str, len = 10)
-  			fragment = /.{#{len}}/
-  			str.split(/(\s+)/).map! { |word|
-    			(/\s/ === word) ? word : word.gsub(fragment, '\0<wbr />')
-  			}.join
-		end
-
-		def wrap_long_string(text, max_width = 20)
-  			(text.length < max_width) ?
-    			text :
-    			text.scan(/.{1,#{max_width}}/).join("<wbr>")
-		end
 end

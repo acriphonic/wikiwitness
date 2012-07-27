@@ -1,5 +1,5 @@
 <% if narrative.image_link == "" || narrative.image_link.nil? %>
-  <div class="narrative">
+  <div class="narrative break-word">
   <h1>Title: <%= narrative.name %></h1>
   </br>
   <p>
@@ -20,15 +20,15 @@
     	</br>
     	</br><h2>
     	<% if narrative.recommendations.empty? %>
-    		<%= link_to (wrap_long_string(narrative.content[0..140]).html_safe + "..."), narrative %>
+    		<%= link_to (narrative.content[0..140] + "..."), narrative %>
     	<% else %>
-    		<%= link_to (wrap_long_string(narrative.recommendations.find(:first).snippet).html_safe), narrative %>
+    		<%= link_to (narrative.recommendations.find(:first).snippet), narrative %>
     	<% end %></h2>
   </p>
   </div>
 <% else %>
   <div id="wrapper">
-  <div class="narrative-plusimage">
+  <div class="narrative-plusimage break-word">
       <h1>Title: <%= narrative.name %></h1>
   </br>
   <p>
@@ -49,9 +49,9 @@
       </br>
       </br><h2>
       <% if narrative.recommendations.empty? %>
-        <%= link_to (wrap_long_string(narrative.content[0..140]).html_safe + "..."), narrative %>
+        <%= link_to (narrative.content[0..140] + "..."), narrative %>
       <% else %>
-        <%= link_to (wrap_long_string(narrative.recommendations.find(:first).snippet).html_safe), narrative %>
+        <%= link_to (narrative.recommendations.find(:first).snippet), narrative %>
       <% end %></h2>
   </p>
   </div>
