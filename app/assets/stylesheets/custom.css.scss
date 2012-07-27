@@ -433,11 +433,11 @@ input, textarea, select, .uneditable-input {
   height: 200px;
 }
 
-.narr-image {
+.narr-image img {
   border-radius: 5px;
   float: right;
-  width: 246px;
-  height: 246px;
+  max-height: 246px;
+  max-width: 246px;
 }
 
 .wrapper {
