@@ -2,10 +2,10 @@
 <% if !notice.nil? %>
 	<p id="notice"><%= notice %></p>
 <% end %>
-<div class="navsearch">
+<div class = "profileheader roundedtop">
 	<h1>Profile</h1>
 </div>
-<div class = "profile">
+<div class = "profile roundedbottom">
 	<p>
 		Name: <%= @user.name %>
 		</br>Username: <%= @user.username %>
@@ -21,7 +21,9 @@
 	</p>
 	<% end %>
 </div>
-<div class="navsearch">
+<div class="navsearch roundedtop">
 	<h1>Narratives</h1>
 </div>
+<div class = "small-holder roundedbottom">
 <%= render :partial => @user.narratives %>
+</div>

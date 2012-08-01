@@ -32,7 +32,6 @@ html {
 }
 
 body {
-  padding-top: 20px;
   background: $mainBlack;
 }
 
@@ -42,6 +41,29 @@ section {
 
 textarea {
   resize: vertical;
+}
+
+.inner-width {
+  width: 50%;
+}
+
+.background-grey {
+  background-color: $lightGrey;
+}
+
+.container {
+  height: 100%;
+}
+
+.holder {
+  margin: 20px 20px 20px 20px;
+  height: 100%;
+}
+
+.small-holder {
+  padding: 15px 15px 15px 15px;
+  background-color: $mainWhite;
+  div:not(:last-child) {margin-bottom: 10px;}
 }
 
 .nav form input {
@@ -62,10 +84,6 @@ $subheaderHeight: 26px;
 .subheader .nav { height: $subheaderHeight; }
 .subheader .nav > li > a { padding: ($subheaderHeight - 20)/2 10px (($subheaderHeight - 20)/2 + 1); }
 .subheader .brand { padding: ((($subheaderHeight - 20) / 2) * 0.8) 20px ((($subheaderHeight - 20) / 2) * 1.2); }
-
-.container {
-  margin-bottom: 0px;
-}
 
 .navbar {
   margin-bottom: 0px;
@@ -95,22 +113,35 @@ $subheaderHeight: 26px;
 .navsearch .nav > li > a {
   margin: 0;
   padding: 0;
+  color: $mainWhite;
 }
 
 .navsearch {
   padding: 5px 5px 5px 0px;
-  margin: 30px 0px 15px 0px;
+  margin: 20px 0px 0px 0px;
   background: $accentRed;
   height: 20px;
-  border-radius: 5px;
+}
+
+.profileheader .nav > li > a {
+  margin: 8px 15px 0px 0px;
+  padding: 0;
+  color: $mainWhite;
+}
+
+.profileheader .nav > li > a:hover {
+  color: $mainWhite;
+  background-color: $accentOrange;
+  text-decoration: underline;
 }
 
 .profileheader {
   padding: 5px 5px 5px 0px;
-  margin: 30px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
   background: $accentOrange;
   height: 34px;
 }
+
 
 .profileheader h1 {
   font-size: 26px;
@@ -161,7 +192,7 @@ $subheaderHeight: 26px;
 .center {
   text-align: center;
   h1 {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 }
 
@@ -175,14 +206,14 @@ h1, h2 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   text-align: center;
 }
 
 h2 {
   font-size: 1.7em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   text-align: center;
   font-weight: normal;
 }
@@ -190,6 +221,7 @@ h2 {
 h4 {
   text-align: center;
   color: $mainWhite;
+  margin-bottom: 0px;
 }
 
 h5 {
@@ -198,11 +230,13 @@ h5 {
   text-align: center;
   font-weight: normal;
   color: $mainWhite;
+  margin-bottom: 0px;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  margin-bottom: 0px;
 }
 
 /* header */
@@ -227,7 +261,7 @@ input, textarea, select, .uneditable-input {
   width: 100%;
   padding: 10px;
   height: auto;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   @include box_sizing;
 }
 
@@ -273,9 +307,8 @@ input, textarea, select, .uneditable-input {
 
 
 .listing {
-  border-radius: 5px;
   padding: 15px 15px 5px 15px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   background-color: $mainWhite;
   h1 {
     margin-bottom: 0px;
@@ -300,35 +333,10 @@ input, textarea, select, .uneditable-input {
 
 .narrative {
   border-radius: 5px;
-  padding: 30px 30px 15px 30px;
-  margin-bottom: 20px;
-  background-color: $mainWhite;
-  h1 {
-    margin-bottom: 0;
-    font-size: 18px;
-    letter-spacing: -1px;
-    text-align: left;
-    color: $darkGrey;
-  }
-  p {
-    font-size: 12px;
-    font-weight: 200;
-  }
-  h3 {
-    font-size: 13px;
-    line-height: 1.7em;
-    text-align: right;
-  }
-}
-
-.narrative-plusimage {
-  border-radius: 5px;
-  padding: 30px 30px 15px 30px;
-  margin-bottom: 20px;
-  width: auto;
-  height: 175px;
-  background-color: $mainWhite;
-  overflow: hidden;
+  padding: 30px 30px 30px 30px;
+  height: 160px;
+  margin-bottom: 0px;
+  background-color: $lightGrey;
   h1 {
     margin-bottom: 0;
     font-size: 18px;
@@ -349,12 +357,32 @@ input, textarea, select, .uneditable-input {
   }
 }
 
+.plusimage {
+  width: auto;
+  overflow: hidden;
+}
+
 .info {
-  padding: 20px 30px 15px 30px;
-  margin-bottom: 20px;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 0px;
   background-color: $mainWhite;
+  p:not(:last-child) {margin-bottom: 10px;}
+  form {
+    text-align: center;
+  }
+  form input {
+    color: $mainBlack;
+    margin: 0px;
+    width: 368px;
+  }
+  form label {
+    margin: 2px;
+  }
+  form select {
+    margin: 0px;
+  }
   h1 {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     font-size: 22px;
     letter-spacing: 1px;
     text-align: left;
@@ -375,6 +403,20 @@ input, textarea, select, .uneditable-input {
     line-height: 1.7em;
     text-align: right;
   }
+  h4 {
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 1px;
+    margin-bottom: 0px;
+    padding: 0;
+  }
+  h5 {
+    font-size: 14px;
+    line-height: 1.2em;
+    font-weight: 200;
+    text-align: center;
+    color: $mainBlack;
+  }
 }
 
 .search {
@@ -390,7 +432,7 @@ input, textarea, select, .uneditable-input {
   background-color: $mainWhite;
   text-align: left;
   padding: 20px 30px 15px 30px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   h1 {
     color: $accentRed;
     font-size: 30px;
@@ -411,9 +453,8 @@ input, textarea, select, .uneditable-input {
 }
 
 .profile {
-  border-radius: 5px;
   padding: 20px 30px 15px 30px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   background-color: $mainWhite;
   p {
     font-size: 18px;
@@ -476,8 +517,7 @@ input, textarea, select, .uneditable-input {
 
 .narr-image img {
   border-radius: 5px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  margin-left: 10px;
   float: right;
   max-height: 220px;
   max-width: 220px;
@@ -485,7 +525,6 @@ input, textarea, select, .uneditable-input {
 
 .wrapper {
   width: 100%;
-  height: 200px;
 }
 
 .break-word {

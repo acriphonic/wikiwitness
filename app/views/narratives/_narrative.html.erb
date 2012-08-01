@@ -1,62 +1,36 @@
-<% if narrative.image_link == "" || narrative.image_link.nil? %>
-  <div class="narrative break-word">
-  <h1>Title: <%= narrative.name %></h1>
-  </br>
-  <p>
-  	<% if @event.nil? %>
-  		<% event = Event.find(narrative.event_id) %>
-  		<i>Event: <%= link_to event.name, event_path(event) %>
-  	<% end %>
-    	<% if @user.nil? %>
-    		<% user = User.find(narrative.user_id) %>
-        <% if user.nil? %>
-          <i>Author: this user has deleted their account
-        <% else %>
-      		<i>Author: <%= user.name %>
-      		</br>Username: <%= link_to user.username, user_path(user) %>
-        <% end %>
-    	<% end %>
-    	</br>Location: <%= narrative.location %></i>
-    	</br>
-    	</br><h2>
-    	<% if narrative.recommendations.empty? %>
-    		<%= link_to (narrative.content[0..140] + "..."), narrative %>
-    	<% else %>
-    		<%= link_to (narrative.recommendations.find(:first).snippet), narrative %>
-    	<% end %></h2>
-  </p>
-  </div>
-<% else %>
-  <div id="wrapper">
-  <div class="narr-image">
-    <%= link_to image_tag(narrative.image_link), narrative.image_link %>
-  </div>
-  <div class="narrative-plusimage break-word">
+<div id="wrapper">
+  <% if narrative.image_link == "" || narrative.image_link.nil? %>
+    <div class="narrative break-word">
+  <% else %>
+    <div class="narr-image">
+      <%= link_to image_tag(narrative.image_link), narrative.image_link %>
+    </div>
+    <div class="narrative plusimage break-word">
+  <% end %>
       <h1>Title: <%= narrative.name %></h1>
-  </br>
-  <p>
-    <% if @event.nil? %>
-      <% event = Event.find(narrative.event_id) %>
-      <i>Event: <%= link_to event.name, event_path(event) %>
-    <% end %>
-      <% if @user.nil? %>
-        <% user = User.find(narrative.user_id) %>
-        <% if user.nil? %>
-          <i>Author: this user has deleted their account
-        <% else %>
-          <i>Author: <%= user.name %>
-          </br>Username: <%= link_to user.username, user_path(user) %>
-        <% end %>
-      <% end %>
-      </br>Location: <%= narrative.location %></i>
       </br>
-      </br><h2>
-      <% if narrative.recommendations.empty? %>
-        <%= link_to (narrative.content[0..140] + "..."), narrative %>
-      <% else %>
-        <%= link_to (narrative.recommendations.find(:first).snippet), narrative %>
-      <% end %></h2>
-  </p>
-  </div>
+      <p>
+      	<% if @event.nil? %>
+      		<% event = Event.find(narrative.event_id) %>
+      		<i>Event: <%= link_to event.name, event_path(event) %>
+      	<% end %>
+        	<% if @user.nil? %>
+        		<% user = User.find(narrative.user_id) %>
+            <% if user.nil? %>
+              <i>Author: this user has deleted their account
+            <% else %>
+          		<i>Author: <%= user.name %>
+          		</br>Username: <%= link_to user.username, user_path(user) %>
+            <% end %>
+        	<% end %>
+        	</br>Location: <%= narrative.location %></i>
+        	</br>
+        	</br><h2>
+        	<% if narrative.recommendations.empty? %>
+        		<%= link_to (narrative.content[0..140] + "..."), narrative %>
+        	<% else %>
+        		<%= link_to (narrative.recommendations.find(:first).snippet), narrative %>
+        	<% end %></h2>
+      </p>
+    </div>
 </div>
-<% end %>

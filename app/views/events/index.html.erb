@@ -1,11 +1,19 @@
 <% provide(:title, 'Events') %>
-<div class="navsearch">
-<h1>Events</h1>
+
+<div class="profileheader roundedtop">
+<nav>
+<ul class="nav pull-left">
+	<li><h1>Events</h1></li>
+</ul>
+	<% if admin_user?(current_user) %>
+	<ul class="nav pull-right">
+      <li><%= link_to 'New Event', new_event_path %></li>
+    </ul>
+    <% end %>
+</nav>
 </div>
-<div class="listing">
-<% if admin_user?(current_user) %>
-	<h2><%= link_to 'New Event', new_event_path %></h2>
-<% end %>
+
+<div class="listing roundedbottom">
 <%= will_paginate %>
 <ul class="events">
   <%= render @events %>

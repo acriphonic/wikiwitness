@@ -10,28 +10,20 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label "event name" %><br />
+    <%= f.label "event name" %>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label "start date" %><br />
-    <%= f.date_select :startdate %>
-  </div>
-  <div class="field">
-    <%= f.label "end date (optional)" %><br />
-    <%= f.date_select :enddate %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
+
+    <%= f.label "start date" %>
+    <%= f.date_select :startdate, {:order => [:month, :day, :year]}, {:style => 'width: 120px'} %>
+
+    <%= f.label "end date (optional)" %>
+    <%= f.date_select :enddate, {:include_blank => true, :default => nil, :order => [:month, :day, :year]}, {:style => 'width: 120px'} %>
+
+    <%= f.label :status %>
     <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label "summary (optional)" %><br />
-    <%= f.text_field :summary %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <%= f.label "summary (optional)" %>
+    <%= f.text_area :summary, {:style => 'width: 368px; height: 100px;'} %>
+  </br></br>
+    <%= f.submit "Create Event", class: "btn btn-large btn-primary" %>
 <% end %>
