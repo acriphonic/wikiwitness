@@ -1,6 +1,8 @@
 <% provide(:title, @event.name) %>
-<div class = "info">
-<h1><%= @event.name %></h1>
+<div class = "profileheader roundedtop">
+	<h1><%= @event.name %></h1>
+</div>
+<div class = "info roundedbottom">
 <p>
   Start date: <%= @event.startdate %>
   </br>End date: <%= @event.enddate %>
@@ -16,6 +18,5 @@
 </h3>
 </div>
 <%= render 'layouts/searchbar' %>
-</br>
 <%= render :partial => @event.narratives.search(params[:search]).sort_by {|narrative|
 	narrative.recommendations.size }.reverse %>

@@ -44,6 +44,13 @@ textarea {
   resize: vertical;
 }
 
+.nav form input {
+  height: 20px;
+  color: $mainBlack;
+  padding: 0px 0px 0px 0px;
+  margin: 0px;
+}
+
 $navbarHeight: 60px;
 
 .navbig .nav { height: $navbarHeight; }
@@ -71,45 +78,73 @@ $subheaderHeight: 26px;
 .form-search {
   padding: 0;
   margin: 0;
+  height: 10px;
 }
 
 .navsearch h1 {
-  font-size: 30px;
+  font-size: 20px;
   padding: 0;
   margin-left: 10px;
   margin-right: 20px;
-  margin-top: 2px;
+  margin-top: 0px;
   margin-bottom: 0;
   text-align: left;
+  letter-spacing: 1px;
 }
 
-.navsearch .nav a {
-  
+.navsearch .nav > li > a {
+  margin: 0;
+  padding: 0;
 }
 
 .navsearch {
   padding: 5px 5px 5px 0px;
-  margin: 20px 0px 20px 0px;
+  margin: 30px 0px 15px 0px;
   background: $accentRed;
-  height: 38px;
+  height: 20px;
   border-radius: 5px;
+}
+
+.profileheader {
+  padding: 5px 5px 5px 0px;
+  margin: 30px 0px 0px 0px;
+  background: $accentOrange;
+  height: 34px;
+}
+
+.profileheader h1 {
+  font-size: 26px;
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 4px;
+  margin-bottom: 0;
+  text-align: left;
+  letter-spacing: 1px;
 }
 
 #logo {
   float: left;
   margin-right: 10px;
-  margin-top: ($navbarHeight - 25) / 2;
-  width: 180px;
+  margin-top: ($navbarHeight - 15) / 2;
+  font-size: 30px;
+  color: $mainWhite;
+}
+
+.accentblue {
+  background: $accentBlue;
+}
+
+.darkgrey {
+  background: $darkGrey;
 }
 
 .roundedtop {
-  background: $accentBlue;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
 
 .roundedbottom {
-  background: $darkGrey;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -315,7 +350,6 @@ input, textarea, select, .uneditable-input {
 }
 
 .info {
-  border-radius: 5px;
   padding: 20px 30px 15px 30px;
   margin-bottom: 20px;
   background-color: $mainWhite;
@@ -456,10 +490,4 @@ input, textarea, select, .uneditable-input {
 
 .break-word {
   word-wrap: break-word;
-}
-
-.field {
-  margin: 0px;
-  padding: 0px;
-  line-height: 1 em;
 }
