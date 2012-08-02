@@ -15,10 +15,10 @@
     <%= f.text_field :name %>
 
     <%= f.label "start date" %>
-    <%= f.date_select :startdate, {:order => [:month, :day, :year]}, {:style => 'width: 120px'} %>
+    <%= f.date_select :startdate, {:order => [:month, :day, :year], :start_year => 1900, :end_year => Time.now.year}, {:style => 'width: 120px'} %>
 
     <%= f.label "end date (optional)" %>
-    <%= f.date_select :enddate, {:include_blank => true, :default => nil, :order => [:month, :day, :year]}, {:style => 'width: 120px'} %>
+    <%= f.date_select :enddate, {:include_blank => true, :default => nil, :order => [:month, :day, :year], :start_year => 1900, :end_year => Time.now.year}, {:style => 'width: 120px'} %>
 
     <%= f.label :status %>
     <%= f.text_field :status %>

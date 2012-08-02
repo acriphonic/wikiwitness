@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
 
 	private
 		def assign_account_type
-			self.account = "basic"
+			self.account = "admin"
 		end
 
 		def create_remember_token
