@@ -1,21 +1,19 @@
 <% provide(:title, 'Events') %>
 
 <div class="profileheader roundedtop">
-<nav>
 <ul class="nav pull-left">
 	<li><h1>Events</h1></li>
 </ul>
-	<% if admin_user?(current_user) %>
-	<ul class="nav pull-right">
-      <li><%= link_to 'New Event', new_event_path %></li>
-    </ul>
-    <% end %>
-</nav>
+<% if admin_user?(current_user) %>
+<ul class="nav pull-right">
+	<li><%= link_to 'New Event', new_event_path %></li>
+</ul>
+<% end %>
 </div>
 
 <div class="listing roundedbottom">
 <%= will_paginate %>
-<ul class="events">
+<ul>
   <%= render @events %>
   <% if @events.empty? %>
   	<p>Sorry, we couldn't find any events that match that name.</p>

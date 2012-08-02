@@ -5,7 +5,7 @@
 
 <div class="listing roundedbottom">
 <%= will_paginate %>
-<ul class="events">
+<ul>
   <%= render @users %>
   <% if @users.empty? %>
   	<p>Sorry, we couldn't find any users matching that name.</p>

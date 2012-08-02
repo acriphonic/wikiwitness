@@ -8,12 +8,12 @@ $accentOrange: #ff6600;
 $accentMagenta: #ff0066;
 $lightGrey: #cccccc;
 $darkGrey: #999999;
-
 $grayMediumLight: #eaeaea;
 $niceBlandGreen: #CEFFCE;
 
-$navbarLinkColor: $mainWhite;
+/* boostrap overrides */
 
+$navbarLinkColor: $mainWhite;
 
 @import "bootstrap";
 
@@ -29,10 +29,12 @@ $navbarLinkColor: $mainWhite;
 
 html {
   overflow-y: scroll;
+  height: 100%;
 }
 
 body {
   background: $mainBlack;
+  height: 100%;
 }
 
 section {
@@ -41,159 +43,6 @@ section {
 
 textarea {
   resize: vertical;
-}
-
-.inner-width {
-  width: 50%;
-}
-
-.background-grey {
-  background-color: $lightGrey;
-}
-
-.container {
-  height: 100%;
-}
-
-.holder {
-  margin: 20px 20px 20px 20px;
-  height: 100%;
-}
-
-.small-holder {
-  padding: 15px 15px 15px 15px;
-  background-color: $mainWhite;
-  div:not(:last-child) {margin-bottom: 10px;}
-}
-
-.nav form input {
-  height: 20px;
-  color: $mainBlack;
-  padding: 0px 0px 0px 0px;
-  margin: 0px;
-}
-
-$navbarHeight: 60px;
-
-.navbig .nav { height: $navbarHeight; }
-.navbig .nav > li > a { padding: ($navbarHeight - 20)/2 10px (($navbarHeight - 20)/2 + 1); }
-.navbig .brand { padding: ((($navbarHeight - 20) / 2) * 0.8) 20px ((($navbarHeight - 20) / 2) * 1.2); }
-
-$subheaderHeight: 26px;
-
-.subheader .nav { height: $subheaderHeight; }
-.subheader .nav > li > a { padding: ($subheaderHeight - 20)/2 10px (($subheaderHeight - 20)/2 + 1); }
-.subheader .brand { padding: ((($subheaderHeight - 20) / 2) * 0.8) 20px ((($subheaderHeight - 20) / 2) * 1.2); }
-
-.navbar {
-  margin-bottom: 0px;
-}
-
-.navbar-inner {
-  border-radius: 0px;
-}
-
-.form-search {
-  padding: 0;
-  margin: 0;
-  height: 10px;
-}
-
-.navsearch h1 {
-  font-size: 20px;
-  padding: 0;
-  margin-left: 10px;
-  margin-right: 20px;
-  margin-top: 0px;
-  margin-bottom: 0;
-  text-align: left;
-  letter-spacing: 1px;
-}
-
-.navsearch .nav > li > a {
-  margin: 0;
-  padding: 0;
-  color: $mainWhite;
-}
-
-.navsearch {
-  padding: 5px 5px 5px 0px;
-  margin: 20px 0px 0px 0px;
-  background: $accentRed;
-  height: 20px;
-}
-
-.profileheader .nav > li > a {
-  margin: 8px 15px 0px 0px;
-  padding: 0;
-  color: $mainWhite;
-}
-
-.profileheader .nav > li > a:hover {
-  color: $mainWhite;
-  background-color: $accentOrange;
-  text-decoration: underline;
-}
-
-.profileheader {
-  padding: 5px 5px 5px 0px;
-  margin: 0px 0px 0px 0px;
-  background: $accentOrange;
-  height: 34px;
-}
-
-
-.profileheader h1 {
-  font-size: 26px;
-  padding: 0;
-  margin-left: 10px;
-  margin-right: 20px;
-  margin-top: 4px;
-  margin-bottom: 0;
-  text-align: left;
-  letter-spacing: 1px;
-}
-
-#logo {
-  float: left;
-  margin-right: 10px;
-  margin-top: ($navbarHeight - 15) / 2;
-  font-size: 30px;
-  color: $mainWhite;
-}
-
-.accentblue {
-  background: $accentBlue;
-}
-
-.darkgrey {
-  background: $darkGrey;
-}
-
-.roundedtop {
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-}
-
-.roundedbottom {
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-.hero-unit {
-  margin-top: 20px;
-  background: $accentRed;
-}
-
-.login {
-  width: 75%;
-}
-
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 0px;
-  }
 }
 
 /* typography */
@@ -239,77 +88,130 @@ p {
   margin-bottom: 0px;
 }
 
+/* top-level container */
+
+.fill {
+  min-height: 100%;
+  width: 50%
+}
+
 /* header */
 
+$navbarHeight: 60px;
 
+.navbig .nav { height: $navbarHeight; }
+.navbig .nav > li > a { padding: ($navbarHeight - 20)/2 10px (($navbarHeight - 20)/2 + 1); }
+.navbig .brand { padding: ((($navbarHeight - 20) / 2) * 0.8) 20px ((($navbarHeight - 20) / 2) * 1.2); }
 
-/* miscellaneous */
+$subheaderHeight: 26px;
 
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
+.subheader .nav { height: $subheaderHeight; }
+.subheader .nav > li > a { padding: ($subheaderHeight - 20)/2 10px (($subheaderHeight - 20)/2 + 1); }
+.subheader .brand { padding: ((($subheaderHeight - 20) / 2) * 0.8) 20px ((($subheaderHeight - 20) / 2) * 1.2); }
 
-
-/* forms */
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  padding: 10px;
-  height: auto;
+.navbar {
   margin-bottom: 0px;
-  @include box_sizing;
 }
 
-#error_explanation {
-  margin-left: auto;
-  margin-right: auto;
-  color: #f00;
-  ul {
-    list-style: none;
-    margin: 0 0 0 0;
-    padding-left: 12px;
+.navbar-inner {
+  border-radius: 0px;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  margin-top: ($navbarHeight - 15) / 2;
+  font-size: 30px;
+  color: $mainWhite;
+}
+
+/* body */
+
+.holder {
+  margin: 20px 20px 20px 20px;
+  height: 100%;
+}
+
+.small-holder {
+  padding: 15px 15px 15px 15px;
+  background-color: $mainWhite;
+  div:not(:last-child) {margin-bottom: 10px;}
+}
+
+.wrapper {
+  width: 100%;
+  height: 220px;
+}
+
+.narr-search-bar {
+  padding: 5px 5px 5px 0px;
+  margin: 20px 0px 0px 0px;
+  background: $accentRed;
+  height: 20px;
+  h1 {
+    font-size: 20px;
+    padding: 0;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    text-align: left;
+    letter-spacing: 1px;
+  }
+  li > a {
+    margin: 0px 10px 0px 0px;
+    padding: 0;
+    color: $mainWhite;
+  }
+  form input {
+    height: 20px;
+    color: $mainBlack;
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
   }
 }
 
-
-
-.field_with_errors {
-  @extend .control-group;
-  @extend .error;
- }
-
- /* users index */
-
-.users {
-  border-radius: 5px;
-  list-style: none;
+.profileheader {
+  padding: 5px 5px 5px 0px;
   margin: 0px 0px 0px 0px;
-  li {
-    overflow: auto;
-    padding: 0% 0% 1% 10%;
-    }
+  background: $accentOrange;
+  height: 34px;
+  h1 {
+    font-size: 26px;
+    padding: 0;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 4px;
+    margin-bottom: 0;
+    text-align: left;
+    letter-spacing: 1px;
+  }
+  li > a {
+    margin: 8px 15px 0px 0px;
+    padding: 0;
+    color: $mainWhite;
+  }
+  li > a:hover {
+    color: $mainWhite;
+    background-color: $accentOrange;
+    text-decoration: underline;
+  }
 }
 
-.events {
-  border-radius: 5px;
-  list-style: none;
-  margin: 0px 0px 0px 0px;
-  li {
-    overflow: auto;
-    padding: 0px 0px 10px 10px;
-    }
+.hero-unit {
+  margin-top: 20px;
+  background: $accentRed;
 }
 
+.login {
+  width: 75%;
+}
 
 .listing {
   padding: 15px 15px 5px 15px;
-  margin-bottom: 0px;
+  margin: 0px 0px 0px 0px;
   background-color: $mainWhite;
+  list-style: none;
   h1 {
     margin-bottom: 0px;
     font-size: 30px;
@@ -328,6 +230,10 @@ input, textarea, select, .uneditable-input {
     font-size: 13px;
     line-height: 1.7em;
     text-align: right;
+  }
+  li {
+    overflow: auto;
+    padding: 0px 0px 10px 10px;
   }
 }
 
@@ -364,23 +270,10 @@ input, textarea, select, .uneditable-input {
 
 .info {
   padding: 20px 20px 20px 20px;
+  height: auto;
   margin-bottom: 0px;
   background-color: $mainWhite;
   p:not(:last-child) {margin-bottom: 10px;}
-  form {
-    text-align: center;
-  }
-  form input {
-    color: $mainBlack;
-    margin: 0px;
-    width: 368px;
-  }
-  form label {
-    margin: 2px;
-  }
-  form select {
-    margin: 0px;
-  }
   h1 {
     margin-bottom: 0px;
     font-size: 22px;
@@ -419,42 +312,10 @@ input, textarea, select, .uneditable-input {
   }
 }
 
-.search {
-  border-radius: 5px;
-  background-color: $mainWhite;
-  text-align: center;
-  padding: 20px 200px 0px 200px;
-  margin: 20px 0px 0px 0px;
-}
-
-.searchbar {
-  border-radius: 5px;
-  background-color: $mainWhite;
-  text-align: left;
-  padding: 20px 30px 15px 30px;
-  margin-bottom: 0px;
-  h1 {
-    color: $accentRed;
-    font-size: 30px;
-    letter-spacing: 1px;
-    text-align: left;
-    padding: 0px;
-  }
-  h4 {
-    color: $accentMagenta;
-    line-height: 2.0em;
-  }
-  li {
-    display: inline;
-    overflow: auto;
-    padding-right: 20px;
-    list-style-type: none;
-  }
-}
-
 .profile {
+  border-radius: 5px;
   padding: 20px 30px 15px 30px;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
   background-color: $mainWhite;
   p {
     font-size: 18px;
@@ -473,6 +334,23 @@ input, textarea, select, .uneditable-input {
     line-height: 1.7em;
     text-align: left;
     color: $accentBlue
+  }
+}
+
+.smallform {
+  form {
+    text-align: center;
+  }
+  form input {
+    color: $mainBlack;
+    margin: 0px;
+    width: 368px;
+  }
+  form label {
+    margin: 2px;
+  }
+  form select {
+    margin: 0px;
   }
 }
 
@@ -499,20 +377,26 @@ input, textarea, select, .uneditable-input {
   }
 }
 
-.contribute {
-    text-align: center;
+/* content styling */
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 0px;
+  }
 }
 
-/* image format */
-
-.align-right {
-  float: right;
-  padding: 0px 0px 15px 15px;
+.break-word {
+  word-wrap: break-word;
 }
+
+/* image styling */
 
 .medium {
   max-width: 200px;
   max-height: 200px;
+  float: right;
+  padding: 0px 0px 15px 15px;
 }
 
 .narr-image img {
@@ -523,10 +407,85 @@ input, textarea, select, .uneditable-input {
   max-width: 220px;
 }
 
-.wrapper {
-  width: 100%;
+/* color and background styles */
+
+.background-grey {
+  background-color: $lightGrey;
 }
 
-.break-word {
-  word-wrap: break-word;
+.background-wood {
+  background: url('wood.jpg');
+  background-repeat: repeat;  
+}
+
+.accentblue {
+  background: $accentBlue;
+}
+
+.darkgrey {
+  background: $darkGrey;
+}
+
+.roundedtop {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.roundedbottom {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 0px;
+  @include box_sizing;
+}
+
+#error_explanation {
+  margin-left: auto;
+  margin-right: auto;
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 0 0;
+    padding-left: 12px;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+ }
+
+.info .smallform {
+  form {
+    text-align: center;
+  }
+  form input {
+    color: $mainBlack;
+    margin: 0px;
+    width: 368px;
+  }
+  form label {
+    margin: 2px;
+  }
+  form select {
+    margin: 0px;
+  }
 }

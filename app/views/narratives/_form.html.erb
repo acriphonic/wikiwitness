@@ -1,3 +1,4 @@
+<div class = "info roundedbottom">
 <%= form_for([@event, @event.narratives.build]) do |f| %>
   <% if @narrative.errors.any? %>
     <div id="error_explanation">
@@ -10,23 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label "Title" %><br />
+    <%= f.label "Title" %>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
+
+    <%= f.label :location %>
     <%= f.text_field :location %>
-  </div>
-   <div class="field">
-    <%= f.label "Link Image (Optional)" %><br />
+
+    <%= f.label "Link Image (optional)" %>
     <%= f.text_field :image_link %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br />
+
+    <%= f.label :content %>
     <%= f.text_area :content %>
-  </div>
-  <div class="contribute">
-    <%= f.submit %>
-  </div>
+    </br></br>
+    <%= f.submit "Contribute", class: "btn btn-large btn-primary" %>
+    
 <% end %>
+</div>

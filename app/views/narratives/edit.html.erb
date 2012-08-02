@@ -1,21 +1,35 @@
-<h1>Editing Narrative</h1>
+<% provide(:title, 'Edit Narrative') %>
+<div class = "profileheader roundedtop">
+  <h1>Edit Narrative</h1>
+</div>
 
+<div class = "info roundedbottom">
 <%= form_for([:event, @narrative]) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
+	<% if @narrative.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@narrative.errors.count, "error") %> prohibited this narrative from being saved:</h2>
+      <ul>
+      <% @narrative.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+ 	<% end %>
+
+    <%= f.label "Title" %>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
+
+    <%= f.label :location %>
     <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label "Link Image (Optional)" %><br />
+
+    <%= f.label "Link Image (optional)" %>
     <%= f.text_field :image_link %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br />
+
+    <%= f.label :content %>
     <%= f.text_area :content %>
-  </div>
-  <p><%= f.submit %></p>
+    </br></br>
+
+    <%= f.submit "Save and Update", class: "btn btn-large btn-primary" %>
+
 <% end %>
+</div>
