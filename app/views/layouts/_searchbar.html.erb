@@ -1,11 +1,10 @@
 <div class="narr-search-bar roundedtop">
   <ul class="nav pull-left">
   	<li><h1>Narratives</h1></li>
-    <% if !@event.users.include?(current_user) %>
-    <li><%= link_to "were you there? please tell us your story", new_event_narrative_path(@event) %></li>
-    <% end %>
   </ul>
-
+  <% if !@event.users.include?(current_user) %>
+  <ul class="nav pull-left"><li><%= link_to "were you there? please tell us your story", new_event_narrative_path(@event) %></li></ul>
+  <% end %>
   <ul class="nav pull-right">
     <%= form_tag(@event, :class => 'form-search', :method => 'get') do %>
     <li><%= text_field_tag :search, params[:search] %></li>

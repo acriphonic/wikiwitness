@@ -128,12 +128,12 @@ $subheaderHeight: 26px;
 /* body */
 
 .holder {
-  margin: 20px 20px 20px 20px;
+  margin: 20px;
   height: 100%;
 }
 
 .small-holder {
-  padding: 15px 15px 15px 15px;
+  padding: 15px;
   background-color: $mainWhite;
   div:not(:last-child) {margin-bottom: 10px;}
 }
@@ -152,11 +152,16 @@ $subheaderHeight: 26px;
     margin-bottom: 0;
     text-align: left;
     letter-spacing: 1px;
+    display: inline;
   }
   li > a {
     margin: 0px 10px 0px 0px;
-    padding: 0;
+    padding: 0px 0px 0px 0px;
     color: $mainWhite;
+    display: inline;
+  }
+  li {
+    display: inline;
   }
   form input {
     height: 20px;
@@ -235,7 +240,7 @@ $subheaderHeight: 26px;
 .narrative {
   border-radius: 5px;
   padding: 30px 30px 30px 30px;
-  height: 160px;
+  height: 180px;
   margin-bottom: 0px;
   background-color: $lightGrey;
   h1 {
@@ -398,8 +403,8 @@ $subheaderHeight: 26px;
   border-radius: 5px;
   margin-left: 10px;
   float: right;
-  max-height: 220px;
-  max-width: 220px;
+  max-height: 240px;
+  max-width: 240px;
 }
 
 /* color and background styles */
