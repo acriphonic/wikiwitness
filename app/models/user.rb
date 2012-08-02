@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
 
 	def self.search(search)
   		if search
-  			find(:all, :conditions => ['username LIKE ? or name LIKE ?',
+  			find(:all, :conditions => ['username LIKE ? OR name LIKE ?',
   				"%#{search}%", "%#{search}%"])
   		else
   			find(:all)

@@ -30,7 +30,7 @@ class Narrative < ActiveRecord::Base
 
   def self.search(search)
     if search
-  		find(:all, :conditions => ['content LIKE ?', "%#{search}%"])
+      find(:all, :conditions => ['content LIKE ? OR name LIKE ?', "%#{search}%", "%#{search}%"])
   	else
   		find(:all)
   	end

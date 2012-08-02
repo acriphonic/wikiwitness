@@ -35,8 +35,10 @@
 </h3>
 </div>
 </br>
+
 <% if !current_user?(@narrative.user) && signed_in? %>
-<div class = "recommendation">
+<div class = "narr-search-bar roundedtop"><h1>Recommend this narrative</h1></div>
+<div class = "recommendation roundedbottom">
 	<% @recommendation = @narrative.recommendations.find_by_user_id(current_user.id) %>
 	<% if @recommendation.nil? %>
 		<%= render :partial => '/recommendations/form' %>

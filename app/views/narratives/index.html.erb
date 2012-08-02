@@ -1,11 +1,12 @@
 <% provide(:title, 'Narratives') %>
-<h1>Narratives</h1>
-
+<div class = "profileheader roundedtop">
+	<h1>Narratives</h1>
+</div>
+<div class = "small-holder roundedbottom">
 <%= will_paginate %>
-<ul class="narratives">
   <%= render @narratives %>
   <% if @narratives.empty? %>
   	<p>Sorry, we couldn't find any narratives that contain that text.</p>
   <% end %>
-</ul>
 <%= will_paginate %>
+</info>

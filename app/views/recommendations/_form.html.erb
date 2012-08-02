@@ -1,9 +1,7 @@
 <%= form_for([@narrative, @narrative.recommendations.build]) do |f| %>
-  <div class="field">
-    <%= f.label "Snippet (optional)" %><br />
+	<p>Snippet (optional): Copy and paste what you feel is the most powerful sentence or phrase, up to 140 characters, to help other users find what they're looking for.</p>
+	</br>
     <%= f.text_field :snippet %>
-  </div>
-  <div class="Recommend">
-    <%= f.submit "Recommend" %>
-  </div>
+ 	</br></br>
+    <h3><%= f.submit "Recommend" %></h3>
 <% end %>
