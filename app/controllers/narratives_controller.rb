@@ -80,7 +80,7 @@ class NarrativesController < ApplicationController
     def authorized_destroy
       @narrative = Narrative.find(params[:id])
       @user = User.find(@narrative.user_id)
-      redirect_to(root_path) unless current_user?(@user) || admin_user?(@user)
+      redirect_to(@narrative) unless current_user?(@user) || admin_user?(current_user)
     end
 
     def already_posted
