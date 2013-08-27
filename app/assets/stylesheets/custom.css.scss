@@ -28,12 +28,15 @@ $navbarLinkColor: $mainWhite;
 
 html {
   overflow-y: scroll;
+  background: transparent;;
   height: 100%;
+  width: 100%;
 }
 
 body {
   background: $mainBlack;
   height: 100%;
+  width: 100%;
 }
 
 section {
