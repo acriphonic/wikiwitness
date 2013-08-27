@@ -15,19 +15,16 @@
 
 class User < ActiveRecord::Base
 	attr_accessible :email, :name, :password, :username, :password_confirmation
-
-	audited
-	has_associated_audits
 	
 	has_many :narratives
 	has_many :events, :through => :narratives
 	has_many :recommendations
 
 	has_secure_password
-	VALID_USERNAME_REGEX = /^[a-zA-Z0-9_]*[a-zA-Z][a-zA-Z0-9_]*$/
+	VALID_USERNAME_REGEX = /\A[a-zA-Z0-9_]*[a-zA-Z][a-zA-Z0-9_]*\z/
 	validates :username, presence: true, length: { minimum: 6, maximum: 15 }, uniqueness:
 		{ case_sensitive: false }, format: { with: VALID_USERNAME_REGEX }
-	VALID_PASSWORD_REGEX = /^(?=.*\d)(?=.*([a-z]|[A-Z]))([\x20-\x7E])*$/
+	VALID_PASSWORD_REGEX = /\A(?=.*\d)(?=.*([a-z]|[A-Z]))([\x20-\x7E])*\z/
 	validates :password, presence: true, length: { minimum: 6, maximum: 20 },
 		format: { with: VALID_PASSWORD_REGEX }
 	validates :password_confirmation, presence: true

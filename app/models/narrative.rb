@@ -16,8 +16,6 @@
 class Narrative < ActiveRecord::Base
   attr_accessible :content, :location, :name, :image_link
 
-  audited :associated_with => :user
-
   belongs_to :event
   belongs_to :user
   has_many :recommendations

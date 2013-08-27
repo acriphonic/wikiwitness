@@ -3,7 +3,7 @@
 $mainWhite: #ffffff;
 $mainBlack: #000000;
 $accentBlue: #3399ff;
-$accentRed: #545b77;
+$accentRed: #333747;
 $accentOrange: #545b77;
 $accentMagenta: #ff0066;
 $lightGrey: #cccccc;
@@ -80,6 +80,12 @@ h5 {
   font-weight: normal;
   color: $mainWhite;
   margin-bottom: 0px;
+}
+
+h6 {
+  margin: 20px 0px 20px 0px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 p {

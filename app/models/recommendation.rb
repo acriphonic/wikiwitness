@@ -13,8 +13,6 @@
 class Recommendation < ActiveRecord::Base
   attr_accessible :snippet
 
-  audited :associated_with => :user
-
   belongs_to :narrative
   belongs_to :user
 
