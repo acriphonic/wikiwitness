@@ -17,6 +17,7 @@
 <% end %>
 </h3>
 </div>
+<div style = "padding: 0px; margin: 0px;">
 <%= render 'layouts/searchbar' %>
 <div class = "small-holder roundedbottom">
 <% if @event.narratives.empty? %>
@@ -24,4 +25,5 @@
 <% end %>
 <%= render :partial => @event.narratives.search(params[:search]).sort_by {|narrative|
 	narrative.recommendations.size }.reverse %>
+</div>
 </div>

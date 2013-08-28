@@ -12,4 +12,8 @@ module AdminHelper
 		def admin_user?(user)
 			signed_in? && (user.account == "admin")
 		end
+		
+		def make_admin(user)
+			user.account == "admin"
+		end
 end

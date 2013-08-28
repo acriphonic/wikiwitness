@@ -5,10 +5,9 @@
     <%= link_to "WikiWitness", getting_started_path, id: "logo" %>
       	<ul class="nav pull-right">
         <li><%= form_tag(search_path, :method => 'get') do %>
-<%= select_tag :scope, options_for_select([["Users", "User"], ["Events", "Event"], ["Narratives", "Narrative"]], "Events"), {:style => 'width: 80px; height: 22px; padding: 0px; margin-top: 18px;'} %>
-<%= text_field_tag :search, params[:search], {:style => 'width: 120px; height: 22px; padding: 0px; margin-top: 18px;'} %><% end %></li>
+<%= select_tag :scope, options_for_select([["Events", "Event"], ["Narratives", "Narrative"], ["Users", "User"]], "Events"), {:style => 'width: 80px; height: 22px; padding: 0px; margin-top: 18px;'} %>
+<%= text_field_tag :search, params[:search], {:style => 'width: 120px; height: 22px; padding: 0px; margin-top: 18px;', :placeholder => "Search"} %><% end %></li>
       </ul>
-      <ul class="nav test pull-right"><li>Search</li></ul>
     </nav>
 </div>
 </div>

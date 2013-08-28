@@ -21,7 +21,7 @@
 	</p>
 	<% end %>
 </div>
-<div class="narr-search-bar roundedtop"><h1>Narratives</h1></div>
+<div class="narr-search-bar roundedtop"><h1><%= @user.name %>'s Narratives</h1></div>
 <div class = "small-holder roundedbottom">
 <%= render :partial => @user.narratives %>
 </div>

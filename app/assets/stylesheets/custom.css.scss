@@ -103,6 +103,10 @@ p {
   width: 50%
 }
 
+.container {
+	overflow: visible;
+}
+
 /* header */
 
 $navbarHeight: 60px;
@@ -119,6 +123,7 @@ $subheaderHeight: 26px;
 
 .navbar {
   margin-bottom: 0px;
+  margin-right: 0px;
 }
 
 .navbar-inner {
@@ -152,7 +157,7 @@ $subheaderHeight: 26px;
 }
 
 .narr-search-bar {
-  padding: 5px 5px 5px 0px;
+  padding: 10px 0px 10px 0px;
   margin: 20px 0px 0px 0px;
   background: $accentRed;
   height: 20px;
@@ -253,25 +258,20 @@ $subheaderHeight: 26px;
 
 .narrative {
   border-radius: 5px;
-  padding: 30px 30px 30px 30px;
-  max-height: 180px;
-  height: 180px;
-  margin-bottom: 0px;
+  padding: 20px 20px 20px 20px;
+  margin: 0px;
   background-color: $lightGrey;
   h1 {
-    margin-bottom: 0;
     font-size: 18px;
     letter-spacing: -1px;
     text-align: left;
     color: $darkGrey;
   }
   p {
-    margin-bottom: 0;
     font-size: 12px;
     font-weight: 200;
   }
   h3 {
-    margin-bottom:0;
     font-size: 13px;
     line-height: 1.7em;
     text-align: right;
@@ -419,8 +419,8 @@ $subheaderHeight: 26px;
   border-radius: 5px;
   margin-left: 10px;
   float: right;
-  max-height: 240px;
-  max-width: 240px;
+  height: 100px;
+  vertical-align:middle;
 }
 
 /* color and background styles */

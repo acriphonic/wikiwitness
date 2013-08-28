@@ -1,3 +1,4 @@
+<div class="navbar" style="padding: 0px; margin: 0px;">
 <div class="narr-search-bar roundedtop">
   <ul class="nav pull-left">
   	<li><h1>Narratives</h1></li>
@@ -6,9 +7,12 @@
   <ul class="nav pull-left"><li><%= link_to "were you there? please tell us your story", new_event_narrative_path(@event) %></li></ul>
   <% end %>
   <ul class="nav pull-right">
-    <%= form_tag(@event, :class => 'form-search', :method => 'get') do %>
-    <li><%= text_field_tag :search, params[:search] %></li>
-    <% end %>
-  </ul>
-  <ul class="nav test pull-right"><li>Search</li></ul>
+  <li>
+  	<%= form_tag(@event, :class => 'form-search', :method => 'get') do %>
+	<%= text_field_tag :search, params[:search], :placeholder => "Search" %>
+	<% end %>
+  </li>
+  </ul></ul>
+  </div>
+</div>
 </div>

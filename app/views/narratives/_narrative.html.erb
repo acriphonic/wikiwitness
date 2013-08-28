@@ -1,9 +1,8 @@
-<% if narrative.image_link == "" || narrative.image_link.nil? %>
-  <div class="narrative break-word">
-<% else %>
-    <%= link_to image_tag(narrative.image_link), narrative.image_link, class: "narr-image" %>
-    <div class="narrative plusimage break-word">
-<% end %>
+<div class="narrative break-word">
+	<% if narrative.image_link != "" || !narrative.image_link.nil? %>
+  		<%= link_to image_tag(narrative.image_link), narrative.image_link, class: "narr-image" %>
+	<% end %>
+    
     <h1>Title: <%= narrative.name %></h1>
     </br>
     <p>
@@ -29,4 +28,4 @@
       		<%= link_to (narrative.recommendations.find(:first).snippet), narrative %>
       	<% end %></h2>
     </p>
-  </div>
+</div>
